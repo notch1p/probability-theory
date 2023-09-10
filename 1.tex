@@ -1,0 +1,70 @@
+\chapter{随机事件及其概率}
+\section{随机事件}
+\dfn{Sample Space}{
+    考虑样本空间集合$S$，我们有$S\coloneqq\{\mbox{所有样本点}\}$.
+}
+
+由定义，我们可以得到几种特殊的样本空间：
+\ex{特殊的样本空间}{
+    \begin{itemize}
+        \item $\varnothing$事件：不可能发生的事件.
+        \item $S-\varnothing$发生的事件.
+        \item 基本事件$\omega$：$|\omega|=1$ i.e. 基本事件只含有一个样本点.
+    \end{itemize}
+}
+\nt{
+    由于$\varnothing$事件和$S-\varnothing$事件是互为对偶的，我们可以得到\textbf{对偶律(De Morgan)}：
+    \[\overline{A\cup B} = \overline{A} \cup \overline{B}\]
+    \[\overline{A\cap B} = \overline{A} \cup \overline{B}\]
+}
+\dfn{和、积事件}{
+\[{\bigcup_{i=1}^{n }A_{i}}\;\mathrm{happen}\iff \exists i \in [1,n] \; \mathrm{s.t.}\;A_i \;\mathrm{happens}\]
+\[{\bigcap_{i=1}^{n}A_{i}}\;\mathrm{happen}\iff\forall i \in [1,n]\;\mathrm{s.t.}\; A_i\;\mathrm{happens}\]
+}
+\section{频率}
+\dfn{频率}{
+    考虑事件$A$，其发生的\textbf{频率}是
+    \[f_n(A)\coloneqq\frac{r_n(A)}{n}\in[0,1]\]
+    其中频数\(\frac{r_n(A)}{n}\in[0,n]\). 显然有\(f_n(S) = 1\).
+}
+\cor{有限可加性}{
+    若\(A_i\cap A_j=\varnothing\)且\(i\neq j,\; i,j\in[1,k]\) i.e.
+    互斥事件\\
+    则有\\
+    \[f_n({\bigcap_{i=1}^{k}A_i}) = \sum_{i=1}^{k}f_n(A_i)\]
+}
+\section{概率}
+\dfn{概率}{
+    （Kolmogorov公理化定义）设有随机试验$E$且与之对应的样本空间$S$，考虑事件$A$\\
+    \[\mathrm{for}\;\forall A\in E, \mathrm{if}\]
+    \begin{enumerate}[label=\bfseries\protect\circled{\arabic*}]
+        \item $0\leq P(A)\leq 1$
+        \item $P(S)=1$
+        \item   \(\Pr\{\bigcup_{i=1}^{\infty} A_i\}=\sum_{i=1}^\infty\Pr\{A_i\}\)
+              i.e. \textbf{可列可加性}\\
+    \end{enumerate}
+    则称$P$为$S$上的概率.
+}
+\subsection{概率的性质}
+由上面的定义我们能够得到概率的性质：
+\begin{enumerate}
+    \item
+          \(\Pr\{\varnothing\}=0\)
+    \item
+          \(\Pr\{\bigcup_{i=1}^{n} A_i\}=\sum_{i=1}^n\Pr\{A_i\}\)
+
+          \(\iff\forall i,j(i\neq j\rightarrow\; A_iA_j = \varnothing)\)
+    \item
+          \(\Pr\{\overline A\} + \Pr\{A\} = 1\)
+    \item
+          \(\Pr\{A-B\} = \Pr\{A\} - \Pr\{AB\}\)
+
+          \(\Rightarrow (A-B) \cap B = \varnothing\)
+    \item
+          \textbf{（单调性）}\(B\subseteq A \Rightarrow \Pr\{B\}\leq\Pr\{A\}\)
+    \item
+          若满足5，由4可得\(\Pr\{A-B\} = \Pr\{A\} - \Pr\{B\}\)
+    \item
+          \textit{（容斥原理）}
+          \(\Pr\{A\cup B\}=\Pr\{A\} + \Pr\{B\} - \Pr\{AB\}\)
+\end{enumerate}

@@ -1,0 +1,22 @@
+\documentclass{report}
+
+\input{assets/preamble}
+\input{assets/macros}
+\input{assets/letterfonts}
+\usepackage{wallpaper}
+
+\definecolor{title_col}{HTML}{00F7F2}
+\ThisLRCornerWallPaper{1.15}{assets/bg.png}
+\title{\color{title_col}\Huge\textbf{概率论与数理统计讲义}\\SCNUSoS}
+\author{\includegraphics[scale=.2]{assets/iconbg.png}\\\huge{\color{title_col}Evan `notch1p' Gao}\\\email{evan@notch1p.xyz}}
+\date{\textit{\color{title_col}大二上}}
+
+\begin{document}
+\maketitle
+\newpage% or \cleardoublepage
+% \pdfbookmark[<level>]{<title>}{<dest>}
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\pagebreak
+\input{1.tex}
+\end{document}
