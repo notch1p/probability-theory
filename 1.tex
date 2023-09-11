@@ -145,8 +145,8 @@
         \item C = \{三个数里有一个5一个偶数和一个其他的奇数\}
     \end{enumerate}
     那么有
-    \(\Pr{A} = \frac{\binom{4}{1}\cdot 3}{9^3}\)\,%
-    \(\Pr{B} = \frac{\binom{4}{1}\cdot 3+\tbinom{4}{2}\mathrm{A_3^3}}{9^3}\)\,%
+    \(\Pr{A} = \frac{\binom{4}{1}\cdot 3}{9^3}\)\,\,%
+    \(\Pr{B} = \frac{\binom{4}{1}\cdot 3+\tbinom{4}{2}\mathrm{A_3^3}}{9^3}\)\,\,%
     \(\Pr{C} = \frac{\binom{4}{1} \binom{4}{1} \mathrm{A_3^3}}{9^3}\)%
     相加得\(\frac{156}{729}\).
 }
@@ -154,9 +154,26 @@
     对立事件\\
     不妨设三个数中出现$5$的事件为$A$，出现偶数的事件为$B$.
     \begin{align*}
-        \bc \Pr{AB} & = 1 - \Pr{\overline{AB}}\\
-        \tf         & = 1 - \left(\Pr{\overline{A}} + \Pr{\overline{B}} - \Pr{\overline{A}\,\overline{B}}\right)\\
-                    & = 1- \left(\frac{8^3}{9^3} + \frac{5^3}{9^3} - \frac{4^3}{9^3}\right)\\
+        \bc \Pr{AB} & = 1 - \Pr{\overline{AB}}                                                                   \\
+        \tf         & = 1 - \left(\Pr{\overline{A}} + \Pr{\overline{B}} - \Pr{\overline{A}\,\overline{B}}\right) \\
+                    & = 1- \left(\frac{8^3}{9^3} + \frac{5^3}{9^3} - \frac{4^3}{9^3}\right)                      \\
                     & = \frac{156}{729}
     \end{align*}
+}
+\pf{法三}{
+    另一种分情况讨论（笔者的分法）
+    \begin{enumerate}
+        \item A = \{三个数中有两个相同的\}
+        \item B = \{三个数全不同\}
+              \begin{enumerate}[label*=\arabic*.]
+                  \item$B_1$ = \{三个数全不同且有两个偶数\}
+                  \item$B_2$ = \{三个数全不同且有两个奇数\}
+                  \item \color{red}!!此项必须要细分成上述两项，一起算会重!!（惨痛教训
+              \end{enumerate}
+    \end{enumerate}
+    那么有
+    \(\Pr{A} = \frac{\binom{4}{1}\binom{3}{1}+ \binom{4}{1}\binom{3}{1}}{9^3}\)\,\,%
+    \(\Pr{B_1} = \frac{\binom{4}{1}\binom{4}{1}\binom{3}{1}}{9^3}\)\,\,%
+    \(\Pr{B_2} = \frac{\binom{4}{1}\binom{4}{1}\mathrm{A_3^3}}{9^3}\)%
+    相加得\(\frac{156}{729}\).
 }
