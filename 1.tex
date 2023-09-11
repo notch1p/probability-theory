@@ -1,10 +1,10 @@
 \chapter{随机事件及其概率}
 \section{随机事件}
 \dfn{Sample Space}{
-    考虑样本空间集合$S$，我们有$S\coloneqq\{\mbox{所有样本点}\}$.
+    考虑样本空间集合$S$,我们有$S\coloneqq\{\mbox{所有样本点}\}$.
 }
 
-由定义，我们可以得到几种特殊的样本空间：
+由定义,我们可以得到几种特殊的样本空间：
 \ex{特殊的样本空间}{
     \begin{itemize}
         \item $\varnothing$事件：不可能发生的事件.
@@ -13,7 +13,7 @@
     \end{itemize}
 }
 \nt{
-    由于$\varnothing$事件和$S-\varnothing$事件是互为对偶的，我们可以得到\textbf{对偶律(De Morgan)}：
+    由于$\varnothing$事件和$S-\varnothing$事件是互为对偶的,我们可以得到\textbf{对偶律(De Morgan)}：
     \[\overline{A\cup B} = \overline{A} \cup \overline{B}\]
     \[\overline{A\cap B} = \overline{A} \cup \overline{B}\]
 }
@@ -23,7 +23,7 @@
 }
 \section{频率}
 \dfn{频率}{
-    考虑事件$A$，其发生的\textbf{频率}是
+    考虑事件$A$,其发生的\textbf{频率}是
     \[f_n(A)\coloneqq\frac{r_n(A)}{n}\in[0,1]\]
     其中频数\(\frac{r_n(A)}{n}\in[0,n]\). 显然有\(f_n(S) = 1\).
 }
@@ -35,7 +35,7 @@
 }
 \section{概率}
 \dfn{概率}{
-    \textit{（Kolmogorov公理化定义）}设有随机试验$E$且与之对应的样本空间$S$，考虑事件$A$\\
+    \textit{（Kolmogorov公理化定义）}设有随机试验$E$且与之对应的样本空间$S$,考虑事件$A$\\
     \[\mathrm{for}\;\forall A\in E, \mathrm{if}\]
     \begin{enumerate}[label=\bfseries\protect\circled{\arabic*}]
         \item $0\leq P(A)\leq 1$
@@ -63,22 +63,22 @@
     \item
           \textit{（单调性）}\(B\subseteq A \Rightarrow \Pr\{B\}\leq\Pr\{A\}\)
     \item
-          若满足5，由4可得\(\Pr\{A-B\} = \Pr\{A\} - \Pr\{B\}\)
+          若满足5,由4可得\(\Pr\{A-B\} = \Pr\{A\} - \Pr\{B\}\)
     \item
           \textit{（容斥原理）}
           \(\Pr\{A\cup B\}=\Pr\{A\} + \Pr\{B\} - \Pr\{AB\}\)
 \end{enumerate}
 \section{条件概率}
 \dfn{条件概率}{
-    设$A$ $B$是两个事件，且$P(A)\neq 0$，则称
+    设$A$ $B$是两个事件,且$P(A)\neq 0$,则称
     \[\Pr\{A|B\} = \frac{\Pr\{AB\}}{\Pr\{B\}}\]
-    为在事件$A$发生的条件下，事件B的\textbf{条件概率}.
+    为在事件$A$发生的条件下,事件B的\textbf{条件概率}.
 }
 \cor{条件概率之性质}{
     概率满足的性质条件概率都满足.
 }
 \thm{}{
-    设$A_1,A_2,\cdots,A_n$是$n$个互斥事件，则有
+    设$A_1,A_2,\cdots,A_n$是$n$个互斥事件,则有
     \[\Pr{\bigcup_{i=1}^n A_i |A}=\sum_{i=1}^n \Pr{A_i|A}\]
 }
 \qs{证明}{
@@ -93,7 +93,7 @@
     \end{align*}
 }
 \subsection{乘法公式}
-由条件概率的定义，我们可以得到乘法公式：
+由条件概率的定义,我们可以得到乘法公式：
 \thm{乘法公式}{
     \begin{align*}
         \Pr{A_1A_2\cdots A_n} & =\Pr\{A_1\}\Pr{A_2|A_1}\Pr{A_3|A_1A_2}\cdots\Pr{A_n|A_1A_2\cdots A_{n-1}} \\
@@ -101,10 +101,10 @@
     \end{align*}
 }
 \ex{「买彩票」}{
-    第一次买中的概率为$\frac{1}{2}$，第二次买中而第一次未中的概率是$\frac{7}{10}$，第三次买中而前两次未中的概率是$\frac{9}{10}$，求三次都未中的概率.
+    第一次买中的概率为$\frac{1}{2}$,第二次买中而第一次未中的概率是$\frac{7}{10}$,第三次买中而前两次未中的概率是$\frac{9}{10}$,求三次都未中的概率.
 }
 \sol{
-    以$A_i(i=1,2,3)$表示事件「第$i$次买中」，以B表示事件「三次都未中」，那么\\
+    以$A_i(i=1,2,3)$表示事件「第$i$次买中」,以B表示事件「三次都未中」,那么\\
     \begin{align*}
         \bc B      & =\overline{A_1}\overline{A_2}\overline{A_3}                                                             \\
         \tf \Pr{B} & = \Pr{\overline{A_1}\overline{A_2}\overline{A_3}}                                                       \\
@@ -115,7 +115,7 @@
 }
 \subsection{全概率公式}
 \mlemma{完备事件组}{
-    设$A_1,A_2,\cdots,A_n$是有限或可数个事件，若其满足
+    设$A_1,A_2,\cdots,A_n$是有限或可数个事件,若其满足
     \begin{enumerate}
         \item 两两互斥
         \item $\bigcup_{i=1}^{n}A_i=S$
@@ -123,7 +123,7 @@
     则称$A_1,A_2,\cdots,A_n$是一个完备事件组.
 }
 \thm{全概公式}{
-    设$A_1,A_2,\cdots,A_n$是一个完备事件组，且$\Pr{A_i} >0\,\textrm{for i in 1\dots{n}}$，则对任一事件$B$，有
+    设$A_1,A_2,\cdots,A_n$是一个完备事件组,且$\Pr{A_i} >0\,\textrm{for i in 1\dots{n}}$,则对任一事件$B$,有
     \[\Pr{B}=\sum_{i=1}^{n}\Pr{A_i}\Pr{B|A_i}\]
 }
 \begin{figure}[h]
@@ -132,11 +132,11 @@
         \caption{全概公式示意图}
     \end{center}
 \end{figure}
-\section*{好题}
+
 \qs{P14-10}{
-    从1到9的整数中有放回地依次随机抽取3次，求取出的3个数之积能被10整除的概率.
+    从1到9的整数中有放回地依次随机抽取3次,求取出的3个数之积能被10整除的概率.
 }
-显然这三个数中必有两数为$5$和$\{2,4,6,8\}$，因此
+显然这三个数中必有两数为$5$和$\{2,4,6,8\}$,因此
 \pf{法一}{
     分情况讨论
     \begin{enumerate}
@@ -152,7 +152,7 @@
 }
 \pf{法二}{
     对立事件\\
-    不妨设三个数中出现$5$的事件为$A$，出现偶数的事件为$B$.
+    不妨设三个数中出现$5$的事件为$A$,出现偶数的事件为$B$.
     \begin{align*}
         \bc \Pr{AB} & = 1 - \Pr{\overline{AB}}                                                                   \\
         \tf         & = 1 - \left(\Pr{\overline{A}} + \Pr{\overline{B}} - \Pr{\overline{A}\,\overline{B}}\right) \\
@@ -168,7 +168,7 @@
               \begin{enumerate}[label*=\arabic*.]
                   \item$B_1$ = \{三个数全不同且有两个偶数\}
                   \item$B_2$ = \{三个数全不同且有两个奇数\}
-                  \item \color{red}!!此项必须要细分成上述两项，一起算会重!!（惨痛教训
+                  \item \color{red}!!此项必须要细分成上述两项,一起算会重!!（惨痛教训
               \end{enumerate}
     \end{enumerate}
     那么有
