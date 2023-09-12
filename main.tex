@@ -4,12 +4,19 @@
 \input{assets/macros}
 \input{assets/letterfonts}
 \usepackage{wallpaper}
+\usepackage{fancyhdr}
+
+\fancypagestyle{empty}{
+\fancyhf{}
+\fancyfoot[C]{\color{title_col}\texttt{\strong{\strong{@notch1p}}}\\\huge{\prmr}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
 
 \definecolor{title_col}{HTML}{FFFFFF}
 \ThisLRCornerWallPaper{1.15}{assets/bg.png}
-\title{\color{title_col}\Huge\textbf{《概率论与数理统计》讲义}\\@SCNUSoS}
-\author{\includegraphics[scale=.2]{assets/iconbg2.png}\\\huge{\color{title_col}Evan `notch1p' Gao}\\\email{evan@notch1p.xyz}}
-\date{\textit{\color{title_col}大二上}\\\color{title_col}\textbf{2023}\\\huge{\prmr}}
+\title{\color{title_col}SCNUSoS\\\Huge\textbf{《概率论与数理统计》讲义}}
+\author{\includegraphics[scale=.2]{assets/iconbg2.png}\\\huge{\textsc{\color{title_col}Evan Gao}}\\\email{evan@notch1p.xyz}}
+\date{\textit{\color{title_col}大二上}\\\color{title_col}\textbf{2023}}
 
 \begin{document}
 \maketitle

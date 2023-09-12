@@ -71,7 +71,9 @@
 \section{条件概率}
 \dfn{条件概率}{
     设$A$ $B$是两个事件,且$P(A)\neq 0$,则称
-    \[\Pr\{A|B\} = \frac{\Pr\{AB\}}{\Pr\{B\}}\]
+    \begin{equation}
+        \Pr\{A|B\} = \frac{\Pr\{AB\}}{\Pr\{B\}}
+    \end{equation}
     为在事件$A$发生的条件下,事件B的\textbf{条件概率}.
 }
 \cor{条件概率之性质}{
@@ -79,10 +81,14 @@
 }
 \thm{}{
     设$A_1,A_2,\cdots,A_n$是$n$个互斥事件,则有
-    \[\Pr{\bigcup_{i=1}^n A_i |A}=\sum_{i=1}^n \Pr{A_i|A}\]
+    \begin{equation}
+        \Pr{\bigcup_{i=1}^n A_i |A}=\sum_{i=1}^n \Pr{A_i|A}
+    \end{equation}
 }
 \qs{证明}{
-    \[\Pr{\overline{B}|A} = 1 - \Pr{B|A}\]
+    \begin{equation}
+        \Pr{\overline{B}|A} = 1 - \Pr{B|A}
+    \end{equation}
 }
 \pf{Proof}{
     \begin{align*}
@@ -95,10 +101,10 @@
 \subsection{乘法公式}
 由条件概率的定义,我们可以得到乘法公式：
 \thm{乘法公式}{
-    \begin{align*}
+    \begin{align}
         \Pr{A_1A_2\cdots A_n} & =\Pr\{A_1\}\Pr{A_2|A_1}\Pr{A_3|A_1A_2}\cdots\Pr{A_n|A_1A_2\cdots A_{n-1}} \\
                               & = \prod_{i=1}^{n}\Pr{A_i|\bigcup_{i=1}^{n-1}A_i}
-    \end{align*}
+    \end{align}
 }
 \ex{「买彩票」}{
     第一次买中的概率为$\frac{1}{2}$,第二次买中而第一次未中的概率是$\frac{7}{10}$,第三次买中而前两次未中的概率是$\frac{9}{10}$,求三次都未中的概率.
@@ -124,7 +130,9 @@
 }
 \thm{全概公式}{
     设$A_1,A_2,\cdots,A_n$是一个完备事件组,且$\Pr{A_i} >0\,\textrm{for i in 1\dots{n}}$,则对任一事件$B$,有
-    \[\Pr{B}=\sum_{i=1}^{n}\Pr{A_i}\Pr{B|A_i}\]
+    \begin{equation}
+        \Pr{B}=\sum_{i=1}^{n}\Pr{A_i}\Pr{B|A_i}
+    \end{equation}
 }
 \begin{figure}[h]
     \begin{center}
@@ -152,12 +160,12 @@
 }
 \pf{法二}{
     对立事件\\
-    不妨设三个数中出现$5$的事件为$A$,出现偶数的事件为$B$.
+    不妨设三个数中出现$5$的事件为$A$,出现偶数的事件为$B$,那么
     \begin{align*}
-        \bc \Pr{AB} & = 1 - \Pr{\overline{AB}}                                                                   \\
-        \tf         & = 1 - \left(\Pr{\overline{A}} + \Pr{\overline{B}} - \Pr{\overline{A}\,\overline{B}}\right) \\
-                    & = 1- \left(\frac{8^3}{9^3} + \frac{5^3}{9^3} - \frac{4^3}{9^3}\right)                      \\
-                    & = \frac{156}{729}
+        \Pr{AB} & = 1 - \Pr{\overline{AB}}                                                                   \\
+                & = 1 - \left(\Pr{\overline{A}} + \Pr{\overline{B}} - \Pr{\overline{A}\,\overline{B}}\right) \\
+                & = 1- \left(\frac{8^3}{9^3} + \frac{5^3}{9^3} - \frac{4^3}{9^3}\right)                      \\
+                & = \frac{156}{729}
     \end{align*}
 }
 \pf{法三}{
