@@ -94,7 +94,7 @@
     \begin{align*}
         \Pr{\overline{B}|A} & = \frac{\Pr{\overline{B}A}}{\Pr{A}} \\
                             & = \frac{\Pr{A}-\Pr{BA}}{\Pr{A}}     \\
-                            & = 1 - \frac{\Pr{B|A}}{\Pr{A}}       \\
+                            & = 1 - \frac{\Pr{BA}}{\Pr{A}}       \\
                             & = 1 - \Pr{B|A}
     \end{align*}
 }
@@ -173,10 +173,10 @@
     \begin{enumerate}
         \item A = \{三个数中有两个相同的\}
         \item B = \{三个数全不同\}
+              \reversemarginpar\marginnote[\footnotesize\color{red}\textbf{此项须要分成下述两项,否则会重}]{}
               \begin{enumerate}[label*=\arabic*.]
                   \item$B_1$ = \{三个数全不同且有两个偶数\}
-                  \item$B_2$ = \{三个数全不同且有两个奇数\}\\
-                  \color{red}!!此项须要分成上述两项,一起算会重!!（惨痛教训
+                  \item$B_2$ = \{三个数全不同且有两个奇数\}
               \end{enumerate}
     \end{enumerate}
     那么有
