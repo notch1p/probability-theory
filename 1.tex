@@ -1,6 +1,6 @@
 \chapter{随机事件及其概率}
 \section{随机事件}
-\dfn{Sample Space}{
+\dfn{样本空间}{
     考虑样本空间集合$S$,我们有$S\coloneqq\{\mbox{所有样本点}\}$.
 }
 
@@ -13,7 +13,7 @@
     \end{itemize}
 }
 \nt{
-    由于$\varnothing$事件和$S-\varnothing$事件是互为对偶的,我们可以得到\textbf{对偶律(De Morgan)}：
+    由于$\varnothing$事件和$S-\varnothing$事件是互为对偶的,我们可以得到\vocab{对偶律(De Morgan)}：
     \[\overline{A\cup B} = \overline{A} \cup \overline{B}\]
     \[\overline{A\cap B} = \overline{A} \cup \overline{B}\]
 }
@@ -23,7 +23,7 @@
 }
 \section{频率}
 \dfn{频率}{
-    考虑事件$A$,其发生的\textbf{频率}是
+    考虑事件$A$,其发生的\vocab{频率}是
     \[f_n(A)\coloneqq\frac{r_n(A)}{n}\in[0,1]\]
     其中频数\(\frac{r_n(A)}{n}\in[0,n]\). 显然有\(f_n(S) = 1\).
 }
@@ -41,7 +41,7 @@
         \item $0\leq P(A)\leq 1$
         \item $P(S)=1$
         \item   \(\Pr\{\bigcup_{i=1}^{\infty} A_i\}=\sum_{i=1}^\infty\Pr\{A_i\}\)
-              i.e. \textbf{可列可加性}\\
+              i.e. \vocab{可列可加性}\\
     \end{enumerate}
     则称$P$为$S$上的概率.
 }
@@ -74,7 +74,7 @@
     \begin{equation}
         \Pr\{A|B\} = \frac{\Pr\{AB\}}{\Pr\{B\}}
     \end{equation}
-    为在事件$A$发生的条件下,事件B的\textbf{条件概率}.
+    为在事件$A$发生的条件下,事件B的\vocab{条件概率}.
 }
 \cor{条件概率之性质}{
     概率满足的性质条件概率都满足.
@@ -99,7 +99,7 @@
     \end{align*}
 }
 \subsection{乘法公式}
-由条件概率的定义,我们可以得到乘法公式：
+由条件概率的定义,我们可以得到\vocab{乘法公式}：
 \thm{乘法公式}{
     \begin{align}
         \Pr{A_1A_2\cdots A_n} & =\Pr\{A_1\}\Pr{A_2|A_1}\Pr{A_3|A_1A_2}\cdots\Pr{A_n|A_1A_2\cdots A_{n-1}} \\
@@ -153,7 +153,7 @@
         \item 两两互斥
         \item $\bigcup_{i=1}^{n}A_i=S$
     \end{enumerate}
-    则称$A_1,A_2,\cdots,A_n$是一个完备事件组.
+    则称$A_1,A_2,\cdots,A_n$是一个\vocab{完备事件组}.
 }
 \thm{全概公式}{
     设$A_1,A_2,\cdots,A_n$是一个完备事件组,且$\Pr{A_i} >0\,\textrm{for i in 1\dots{n}}$,则对任一事件$B$,有
@@ -205,8 +205,11 @@
     \(\Pr{B_2} = \frac{\binom{4}{1}\binom{4}{1}\mathrm{A_3^3}}{9^3}\)%
     相加得\(\frac{156}{729}\).
 }
+\nt{
+    讨论各种情况的概率进而求得所求事件的概率的方法实际上是\vocab{全概率公式}的一种体现.
+}
 \subsection{Beyes公式}
-全概公式是通过计算某一事件会发生的\textbf{所有原因和情况的可能性大小}来计算该事件发生的概率,而Beyes公式则与之相反,考察一件已经发生的事情的\textbf{各种原因或或情况的可能性大小}.
+\vocab{全概公式}是通过计算某一事件会发生的\textbf{所有原因和情况的可能性大小}来计算该事件发生的概率,而\vocab{Beyes}公式则与之相反,考察一件已经发生的事情的\textbf{各种原因或或情况的可能性大小}.
 \leftnote[1.8cm]{$\Pr{A_i}$,$\Pr{A_i|B}$分别称为原因的先验概率和后验概率}
 \thm{Beyes公式}{
     设$A_1,A_2,\cdots,A_n$是一个完备事件组,且$\Pr{A_i} >0\,\textrm{for i in 1\dots{n}}$,则对任一可能发生的事件$B$,有
@@ -217,7 +220,7 @@
 \dfn{两事件独立性}{
     设$A,B$是两个事件,若
     \[\Pr{AB}=\Pr{A}\Pr{B}\]
-    则称$A,B$\textbf{相互独立}.
+    则称$A,B$\vocab{相互独立}.
 }
 \thm{}{
     设$A$,$B$两事件相互独立且$\Pr{B}>0$,则有
@@ -230,9 +233,9 @@
 根据三个事件(略)独立性的定义,可以类推到n个事件的独立性:
 设$A_1,A_2,\cdots,A_n$是$n$个事件,若对于其中任意$k(2\leq k\leq n)$个事件$A_{i_1},A_{i_2},\cdots,A_{i_k}$,有
 \[\Pr{A_{i_1}A_{i_2}\cdots A_{i_k}}=\Pr{A_{i_1}}\Pr{A_{i_2}}\cdots\Pr{A_{i_k}}\]
-则称$A_1,A_2,\cdots,A_n$\textbf{相互独立}.
+则称$A_1,A_2,\cdots,A_n$\vocab{相互独立}.
 \dfn{}{
-    设$A_1,A_2,\cdots,A_n\,(n > 2)$是$n$个事件,若其中任意两个事件相互独立,则称这$n$个事件两两独立.
+    设$A_1,A_2,\cdots,A_n\,(n > 2)$是$n$个事件,若其中任意两个事件相互独立,则称这$n$个事件\vocab{两两独立}.
 }
 由此可以得到多个独立事件所具备的性质
 \cor{}{
@@ -251,4 +254,4 @@ n次Bernoulli试验的概率分布就是二项分布.其概率密度函数为
 \[f(k,n,p)=\Pr(k;n,p)=\Pr(X=k)={\binom {n}{k}}p^{k}(1-p)^{n-k}\]
 \textbf{Glossary}:两点分布=Bernoulli试验;二项分布=多次Bernoulli试验=Bernoulli概型.
 }
-
+\textbf{辨析}    $\Pr{A}$ 和$\Pr(X)$使用的括号不同.大括号代表是事件,即一系列样本点集合(故而用大括号),小括号代表是随机变量(因为此时是概率密度函数).
