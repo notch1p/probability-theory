@@ -1,5 +1,6 @@
 \chapter{随机事件及其概率}
 \section{随机事件}
+\leftnote[.5cm]{\vocab{事件}是样本空间的子集}
 \dfn{样本空间}{
     考虑样本空间集合$S$,我们有$S\coloneqq\{\mbox{所有样本点}\}$.
 }
@@ -161,6 +162,11 @@
         \Pr{B}=\sum_{i=1}^{n}\Pr{A_i}\Pr{B|A_i}
     \end{equation}
 }
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.5]{total_prob}
+    \caption{全概公式示意图}
+\end{figure}
 \qs{P14-10}{
     从1到9的整数中有放回地依次随机抽取3次,求取出的3个数之积能被10整除的概率.
 }
@@ -241,7 +247,6 @@
 \cor{}{
     设$A_1,A_2,\cdots,A_n\,(n > 2)$相互独立,则其中任意$k(2\leq k\leq n)$个(它们的对立)事件也相互独立.
 }
-\clearpage
 \section{Bernoulli试验}
 即两点分布.
 \leftnote[1.8cm]{这相当于在实验结果序列中任取k次发生A事件}
