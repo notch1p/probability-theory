@@ -32,7 +32,7 @@
     \[\Pr(X=k)=\binom{n}{k}p^k(1-p)^{n-k},\,\,k=0,1,\cdots,n\]
     其中$n$为正整数,$0<p<1$,则称$X$服从参数为$n,p$的\vocab{二项分布},记为$X\sim B(n,p)$.
 }
-\leftnote{$\sim$ 记号就是\textbf{服从}的意思}
+\leftnote{$\sim$记号就是\textbf{服从}的意思}
 二项概率总存在一个最大值$M$ s.t. \((n+1)p-1\leq M<(n+1)p\).
 \subsubsection{Poisson分布}
 \dfn{Poisson分布}{
@@ -69,6 +69,7 @@
 $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 可以看出阶梯型函数符合CDF之性质:总是右连续的;而作为一个分段函数来说,其各段区间总是左闭右开的.
 \nt{
-    考题中由CDF反推分布列可以根据每一个左侧端点得到对应的随机变量$x_i$.
+    考题中由CDF反推分布列可以根据每一个左侧端点得到对应的随机变量$x_i$.\\
+    计算分布列时,有公式$\Pr{a\leq X< b} = F(b) - F(a)$.
 }
 随机变量$X$的CDF为阶梯型函数$\Leftrightarrow$ $X$是离散型随机变量.
