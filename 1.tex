@@ -219,7 +219,9 @@
 \leftnote[1.8cm]{$\Pr{A_i}$,$\Pr{A_i|B}$分别称为原因的先验概率和后验概率}
 \thm{Beyes公式}{
     设$A_1,A_2,\cdots,A_n$是一个完备事件组,且$\Pr{A_i} >0\,\textrm{for i in 1\dots{n}}$,则对任一可能发生的事件$B$,有
-    \[\Pr{A_i|B}=\frac{\Pr{A_i}\Pr{B|A_i}}{\sum_{j=1}^{n}\Pr{A_j}\Pr{B|A_j}}\]
+    \begin{equation}
+        \Pr{A_i|B}=\frac{\Pr{A_i}\Pr{B|A_i}}{\sum_{j=1}^{n}\Pr{A_j}\Pr{B|A_j}}
+    \end{equation}
 }
 \section{事件的独立性}
 \leftnote[1cm]{\textbf{独立与互斥是两种不同的概念}}
@@ -238,7 +240,9 @@
 
 根据三个事件(略)独立性的定义,可以类推到n个事件的独立性:
 设$A_1,A_2,\cdots,A_n$是$n$个事件,若对于其中任意$k(2\leq k\leq n)$个事件$A_{i_1},A_{i_2},\cdots,A_{i_k}$,有
-\[\Pr{A_{i_1}A_{i_2}\cdots A_{i_k}}=\Pr{A_{i_1}}\Pr{A_{i_2}}\cdots\Pr{A_{i_k}}\]
+\begin{equation}
+    \Pr{A_{i_1}A_{i_2}\cdots A_{i_k}}=\Pr{A_{i_1}}\Pr{A_{i_2}}\cdots\Pr{A_{i_k}}
+\end{equation}
 则称$A_1,A_2,\cdots,A_n$\vocab{相互独立}.
 \dfn{}{
     设$A_1,A_2,\cdots,A_n\,(n > 2)$是$n$个事件,若其中任意两个事件相互独立,则称这$n$个事件\vocab{两两独立}.
