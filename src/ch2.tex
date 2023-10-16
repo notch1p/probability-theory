@@ -218,7 +218,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \section{随机变量函数的分布}
 前面提到Theorem 2.4.1. 其中的$Y=\frac{X-\mu}{\sigma}$是随机变量$X$的函数,因此$Y$也是随机变量.
 \dfn{随机变量函数}{
-    若存在一个函数$g(x)$ s.t. $X,Y$满足
+    若存在一个函数$g(x)$ s.t. 随机变量$X,Y$满足
     \begin{equation*}
         Y=g(X)
     \end{equation*}
@@ -237,7 +237,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \end{equation*}
 那么有\\
 \begin{equation}
-    \Pr{Y=y_i} = \Pr{X\in C_i } = \sum_{x_j \in C_i }\Pr{X=x_j}
+    \Pr{Y=y_i} = \Pr{X\in C_i } = \sum_{x_j \in C_i }\Pr{X=x_j} \label{eq:2.14}
 \end{equation}
 为Y的分布律.这表明:\textbf{$Y$的分布律完全由$X$的分布律确定}.
 \subsection{连续型随机变量函数的分布}
@@ -275,11 +275,11 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     试求$Y=X^2$的分布律
 }
 \sol{
-    由题意得$Y=0,1,4,9,$
+    由题意得$Y=0,1,4,9,$,因此利用\eqref{eq:2.14}计算得
     \begin{align*}
-        \Pr{Y=0} & = \Pr{X=0} = \frac{1}{5}              \\
-        \Pr{Y=1} & = \Pr{X=-1} + \Pr{X=1} = \frac{7}{30} \\
-        \Pr{Y=4} & = \Pr{X=-2} + \Pr{X=2} = \frac{1}{5}  \\
+        \Pr{Y=0} & = \Pr{X=0} = \frac{1}{5}      \\
+        \Pr{Y=1} & = \Pr{X=\pm 1} = \frac{7}{30} \\
+        \Pr{Y=4} & = \Pr{X=-2}= \frac{1}{5}      \\
         \Pr{Y=9} & = \Pr{X=3} = \frac{11}{30}
     \end{align*}
     \begin{center}
@@ -299,9 +299,9 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     \begin{align*}
         F_Y(y ) = \Pr{2X^2 +1 \leq y} & = \Pr{\sqrt{-\frac{y-1}{2}}\leq X \leq \sqrt{\frac{y-1}{2}}}                                                                                                                                                    \\
                                       & =\begin{cases*}
-                                             {\left(\displaystyle\int_{-\sqrt{\frac{y-1}{2}}}^{\sqrt{\frac{y-1}{2}}}f_X(x )\dd x\right)'} & $y> 1$ \\
-                                             0                                                                                            & else
-                                         \end{cases*}                                                                                                          \\
+                                             {\displaystyle\int_{-\sqrt{\frac{y-1}{2}}}^{\sqrt{\frac{y-1}{2}}}f_X(x )\dd x} & $y> 1$ \\
+                                             0                                                                              & else
+                                         \end{cases*}                                                                                                                        \\
                                       & = \begin{cases*}
                                               F_X\left(\sqrt{\frac{y-1}{2}}\right) - F_X\left(-\sqrt{\frac{y-1}{2}}\right) & $y> 1$ \\
                                               0                                                                            & else
