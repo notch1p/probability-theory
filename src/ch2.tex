@@ -100,9 +100,9 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \pf{证明    X取任一特值的概率为$0$}{
     \begin{align*}
         \mbox{考虑极限}
-        \Pr{X=a} & =\lim_{\Delta x \leftarrow 0^+}\Pr{a-\Delta x \le X \leq a}   \\
+        \Pr{X=a} & =\lim_{\Delta x \to 0^+}\Pr{a-\Delta x \le X \leq a}   \\
         \mbox{对RHS积分,有}                                                          \\
-        \Pr{X=a} & =\lim_{\Delta x \leftarrow 0^+}\int_{a-\Delta x}^{a}f(x)\dd x \\
+        \Pr{X=a} & =\lim_{\Delta x \to 0^+}\int_{a-\Delta x}^{a}f(x)\dd x \\
                  & =0.
     \end{align*}
 }
@@ -164,8 +164,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     其中$\mu,\sigma(\sigma>0)$为常数,则称$X$服从参数为$\mu,\sigma^2$的\vocab{正态分布},记为$X\sim N(\mu,\sigma^2)$.
 }
 \qs{Poisson积分}{
-    \textbf{不使用Wallis公式},求Poisson积分:
-        $\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\dd t.$
+    \textbf{不使用Wallis公式},求Poisson积分\;$\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\dd t.$
 }
 
 \sol{
@@ -266,7 +265,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \exc{离散变量函数导出PMF}{
     设随机变量$X$的分布律为
     \begin{center}
-        \begin{tabular}{@{}c|ccccc@{}}
+        \begin{tabular}{@{}cccccc@{}}
             \toprule
             $X$   & $-2$          & $-1$          & $0$           & $1$            & $3$             \\ \midrule
             $p_i$ & $\frac{1}{5}$ & $\frac{1}{6}$ & $\frac{1}{5}$ & $\frac{1}{15}$ & $\frac{11}{30}$ \\ \bottomrule
@@ -284,7 +283,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     \end{align*}
     \begin{center}
         $\tf$\;
-        \begin{tabular}{@{}c|cccc@{}}
+        \begin{tabular}{@{}ccccc@{}}
             \toprule
             $Y$   & $0$           & $1$            & $4$           & $9$             \\ \midrule
             $p_i$ & $\frac{1}{5}$ & $\frac{7}{30}$ & $\frac{1}{5}$ & $\frac{11}{30}$ \\ \bottomrule

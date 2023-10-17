@@ -7,12 +7,12 @@
 \usepackage{wallpaper}
 \fancypagestyle{empty}{
 \fancyhf{}
-\fancyfoot[C]{{{\huge \prmr}\\\texttt{\textbf{\color{white}Version \DTMsetdatestyle{pdf}\today}}}}
+\fancyfoot[C]{{{\huge \prmr}}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 \fancypagestyle{mystyle}{
 \fancyhf{}
-\fancyfoot[C]{\includesvg{by-nc-sa}\\\copyright \textbf{2023} notch1p, released under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
+\fancyfoot[C]{\href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{\includesvg{by-nc-sa}}\\\copyright \textbf{2023} Evan Gao, licensed under \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC BY-NC-SA 4.0}}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}}
 
@@ -29,12 +29,13 @@
 \thispagestyle{mystyle}
 \vspace*{\fill}
 \begin{center}
-    {\Huge{\displayfont Made with \XeLaTeX}}\\
-    {\displayfont(And Love)}\\
+    {\Huge\textit{\displayfont Made with \XeLaTeX}}\\
+    {\textit{\displayfont And Love}}\\
     \vspace{1cm}
-    \large\email{evan@notch1p.xyz}\\
+    \large\texttt{\textbf{\email{evan@notch1p.xyz}}}\\
     \vspace{1cm}
     \includesvg[scale=.2]{glenda}\\
+    \textsf{\textbf{\DTMsetdatestyle{pdf}\today}}
 \end{center}
 \vfill % equivalent to \vspace{\fill}
 \newpage% or \cleardoublepage
