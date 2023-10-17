@@ -52,7 +52,7 @@
 \subsection{随机变量的分布函数}
 \dfn{随机变量CDF}{
     设$X$是一个随机变量,对任意实数$x$,定义
-    \[F(x)=\Pr(X\leq x)\in [0,1]\]
+    \[F(x)\defeq\Pr(X\leq x)\in [0,1]\]
     称$F(x)$为$X$的\vocab{累积分布函数}(CDF). 有时记作$F_X(x)$或$X\sim F(x)$.
 }
 分布函数$F(x)$的值就表示$X$落在区间$(-\infty,x]$的概率.
@@ -84,7 +84,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \dfn{PDF}{
     设$X$是一个随机变量,如果存在非负可积函数$f(x)$,使对任意实数$x$有
     \begin{equation}
-        F(x) = \Pr{X\leq x} = \int_{-\infty}^xf(t)\dd t
+        F(x) =  \Pr{X\leq x} = \int_{-\infty}^xf(t)\dd t
     \end{equation}
     则称$X$为\vocab{连续型随机变量},$f(x)$为$X$的\vocab{概率密度函数}(PDF).
 }
@@ -110,7 +110,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \begin{equation}
     \Pr{a< X< b } = F(b ) - F(a ) = \int_{a }^{b }f(x )\dd x.
 \end{equation}
-无论X两侧端点开闭都成立.
+这个等式无论X两侧端点开闭都成立.
 \subsection{常用连续型分布}
 \subsubsection{均匀分布}
 \dfn{均匀分布}{
@@ -124,7 +124,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 
     其中$a<b$,则称$X$服从参数为$a,b$的\vocab{均匀分布},记为$X\sim U(a,b)$.
 }
-\leftnote[-1cm]{U stands for Uniform}
+\leftnote[-1cm]{U for Uniform}
 设$[a,b]$之间的任意子区间为$[c,d]$,由上式可得$\Pr{c<X<d}=\int_{c }^{d }\frac{1}{b-a}\dd x = \frac{d-c}{b-a}$.\\因而我们可以得到
 \cor{均匀分布的CDF}{
     \begin{equation}
@@ -159,19 +159,17 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \dfn{正态分布}{
     若随机变量$X$的概率密度为
     \begin{equation}
-        f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\,\,-\infty<x<+\infty
+        f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}},\,\,\left(-\infty<x<+\infty\right)
     \end{equation}
     其中$\mu,\sigma(\sigma>0)$为常数,则称$X$服从参数为$\mu,\sigma^2$的\vocab{正态分布},记为$X\sim N(\mu,\sigma^2)$.
 }
 \qs{Poisson积分}{
-    \textbf{不使用Wallis公式},求Poisson积分:\\
-    \begin{equation*}
-        \int_{-\infty}^{+\infty}e^{-t^2}\dd t
-    \end{equation*}
+    \textbf{不使用Wallis公式},求Poisson积分:
+        $\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\dd t.$
 }
 
 \sol{
-    \textit{分析法  转化为求累次积分}
+    \textit{转化为求累次积分}
     \begin{align}
         \text{要求原式,不妨先求其平方,亦即}                                                                                                                                            \nonumber \\
         \left(\int_{-\infty}^{+\infty}e^{-t^2}\dd t\right)^2                              & = \int_{-\infty}^{+\infty}e^{-x^2}\dd x\int_{-\infty}^{+\infty}e^{-y^2}\dd y \nonumber  \\
@@ -194,7 +192,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     \includegraphics[scale=.75]{Normal_Distribution_PDF}
     \caption{PDF}
 \end{figure}
-\leftnote[5cm]{$\sigma$越小,方差越大,曲线中峰越陡}
+\leftnote[4.8cm]{$\sigma$越小,方差越大,曲线中峰越陡}
 \begin{enumerate}
     \item $\mu$确定曲线位置, $\sigma$确定曲线中峰的陡峭程度
     \item 密度曲线关于$x=\mu$对称
@@ -205,6 +203,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \leftnote[1.1cm]{\textbf{\color{red}$\phi(x)$为偶函数.}}
 \begin{align}
     \phi(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} &  & \Phi(x ) = \int_{-\infty}^{x}\phi(t)\dd t
+    \label{eq:2.13}
 \end{align}
 \thm{}{
     设$X\sim N(\mu,\sigma^2)$,则$Y= \frac{X-\mu}{\sigma}\sim N(0,1)$.\\
@@ -252,16 +251,17 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
             -1 & X<0
         \end{cases}
     \end{equation*}
-    显然$Y=0,\pm 1$,是一个离散型随机变量.
+    显然$Y=0,\pm 1$,是一个离散型随机变量.因此,在连续型的情况下,$Y$的连续性由其自身决定.
 }
 \subsubsection{导出$Y$的PDF}
-已知$X$的CDF$F_X(x )$或PDF$f_X(x )$,则$Y=g(x )$的CDF可以通过以下公式求得:
+已知$X$的CDF\,$F_X(x )$或PDF\,$f_X(x )$,则$Y=g(x )$的CDF可以通过以下公式求得:
 \begin{equation}
     \begin{split}
-        F_Y(y ) = \Pr{Y\leq y } = \Pr{g(X)\leq y } = \Pr{X\in C_y },\,\mbox{其中}C_y = \{x | g(x )\leq y \}.
+        F_Y(y ) = \Pr{Y\leq y } = \Pr{g(X)\leq y } = \Pr{X\in C_y },\,\mbox{其中}\,C_y = \{x | g(x )\leq y \}.
     \end{split}
 \end{equation}
-之后通过积分$\int_{C_y }f_X(x )\dd x$求得CDF.
+之后通过积分$\int_{C_y }f_X(x )\dd x$求得CDF.\\
+下面两道例题来自第五次作业.
 \newpage
 \exc{离散变量函数导出PMF}{
     设随机变量$X$的分布律为
@@ -314,7 +314,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
                                   \end{cases*}
     \end{align*}
     \begin{equation*}
-        \bc\; \phi(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\;\;\mbox{注意到$\phi(x)$为偶函数}
+        \bc\quad\phi(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\;\eqref{eq:2.14}\quad\mbox{注意到$\phi(x)$为偶函数}
     \end{equation*}
     Therefore we have
     \begin{align*}
