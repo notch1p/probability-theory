@@ -17,7 +17,7 @@
 \setCJKfamilyfont{jarm}{IPAmjMincho}[BoldFont=Hiragino Sans W6, ItalicFont=YuKyokasho]
 \setCJKfamilyfont{hant}{I.Ming}[BoldFont=Hiragino Sans CNS W6, ItalicFont=LXGW WenKai Mono TC]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[tmargin=2cm,rmargin=1in,lmargin=1in,bmargin=2cm,footskip=.2in]{geometry}
+\usepackage[a4paper,tmargin=2cm,rmargin=1in,lmargin=1in,bmargin=2cm,footskip=.2in]{geometry}
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
 %\usepackage[varbb]{newpxmath}
 \usepackage{xfrac}
@@ -767,8 +767,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TABLE OF CONTENTS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usepackage{pgf,tikz}
 \definecolor{doc}{RGB}{0,60,110}
 \usepackage{titletoc}
 \contentsmargin{0cm}
