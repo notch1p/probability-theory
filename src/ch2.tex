@@ -3,7 +3,7 @@
 \dfn{随机变量}{
     设随机试验的样本空间为$S$,称定义在$S$上的实值单值函数$X=X(\omega)$为\vocab{随机变量}.\\
     亦即
-    \[X:\omega\mapsto x_i \in \RR\,\, \mathrm{i.e.}\,\,S\rightarrow\RR\]
+    \[X:\omega\mapsto x_i \in \RR\,\, \ie\,\,S\rightarrow\RR\]
 }
 实际上,$\Pr(X=a)$是$A=\{\omega|X(\omega)=a\}$的简记.
 \section{离散型随机变量及其分布}
@@ -85,14 +85,14 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \dfn{PDF}{
     设$X$是一个随机变量,如果存在非负可积函数$f(x)$,使对任意实数$x$有
     \begin{equation}
-        F(x) =  \Pr{X\leq x} = \int_{-\infty}^xf(t)\dd t
+        F(x) =  \Pr{X\leq x} = \int_{-\infty}^xf(t)\dd{t}
     \end{equation}
     则称$X$为\vocab{连续型随机变量},$f(x)$为$X$的\vocab{概率密度函数}(PDF).
 }
 立即可以得到PDF的性质
 \begin{enumerate}
     \item $f(x)\geq 0$;
-    \item $\int_{-\infty}^{+\infty}f(x)\dd x = 1$.
+    \item $\int_{-\infty}^{+\infty}f(x)\dd{x} = 1$.
     \item $F'(x) = f(x)$. 若f(x)在x处连续
 \end{enumerate}
 \nt{
@@ -101,15 +101,15 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \pf{证明    X取任一特值的概率为$0$}{
     \begin{align*}
         \mbox{考虑极限}
-        \Pr{X=a} & =\lim_{\Delta x \to 0^+}\Pr{a-\Delta x \le X \leq a}   \\
-        \mbox{对RHS积分,有}                                                   \\
-        \Pr{X=a} & =\lim_{\Delta x \to 0^+}\int_{a-\Delta x}^{a}f(x)\dd x \\
+        \Pr{X=a} & =\lim_{\Delta x \to 0^+}\Pr{a-\Delta x \le X \leq a}    \\
+        \mbox{对RHS积分,有}                                                    \\
+        \Pr{X=a} & =\lim_{\Delta x \to 0^+}\int_{a-\Delta x}^{a}f(x)\dd{x} \\
                  & =0.
     \end{align*}
 }
 由上面的证明我们可以知道以下的性质
 \begin{equation}
-    \Pr{a< X< b } = F(b ) - F(a ) = \int_{a }^{b }f(x )\dd x.
+    \Pr{a< X< b } = F(b ) - F(a ) = \int_{a }^{b }f(x )\dd{x}.
 \end{equation}
 这个等式无论X两侧端点开闭都成立.
 \subsection{常用连续型分布}
@@ -126,7 +126,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     其中$a<b$,则称$X$服从参数为$a,b$的\vocab{均匀分布},记为$X\sim U(a,b)$.
 }
 \leftnote[-1cm]{U for Uniform}
-设$[a,b]$之间的任意子区间为$[c,d]$,由上式可得$\Pr{c<X<d}=\int_{c }^{d }\frac{1}{b-a}\dd x = \frac{d-c}{b-a}$.\\因而我们可以得到
+设$[a,b]$之间的任意子区间为$[c,d]$,由上式可得$\Pr{c<X<d}=\int_{c }^{d }\frac{1}{b-a}\dd{x} = \frac{d-c}{b-a}$.\\因而我们可以得到
 \cor{均匀分布的CDF}{
     \begin{equation}
         F(x) = \begin{cases}
@@ -165,25 +165,25 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     其中$\mu,\sigma(\sigma>0)$为常数,则称$X$服从参数为$\mu,\sigma^2$的\vocab{正态分布},记为$X\sim N(\mu,\sigma^2)$.
 }
 \qs{Poisson积分}{
-\textbf{不使用Wallis公式},求Poisson积分\;$\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\dd t.$
+\textbf{不使用Wallis公式},求Poisson积分\;$\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\dd{t}.$
 }
 
 \sol{
     \textit{转化为求累次积分}
     \begin{align}
-        \text{要求原式,不妨先求其平方,亦即}                                                                                                                                            \nonumber \\
-        \left(\int_{-\infty}^{+\infty}e^{-t^2}\dd t\right)^2                              & = \int_{-\infty}^{+\infty}e^{-x^2}\dd x\int_{-\infty}^{+\infty}e^{-y^2}\dd y \nonumber  \\
-        \text{化为累次积分有}                                                                                                                                                    \nonumber \\
-                                                                                          & = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-(x^2+y^2)}\dd x\dd y.  \nonumber  \\
-        \text{相当于在平面内求此积分,化为极坐标有}                                                                                                                                         \nonumber \\
-        \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-\rho^2}\rho\dd \rho\dd \theta & = \int_{0}^{2\pi}\dd \theta\int_{0}^{+\infty}e^{-\rho^2}\rho\dd \rho       \nonumber    \\
-                                                                                          & = \pi                                                                         \nonumber \\
-        \tf \int_{-\infty}^{+\infty}e^{-t^2}\dd t                                         & = \sqrt{\pi}.
+        \text{要求原式,不妨先求其平方,亦即}                                                                                                                                            \nonumber    \\
+        \left(\int_{-\infty}^{+\infty}e^{-t^2}\dd{t}\right)^2                               & = \int_{-\infty}^{+\infty}e^{-x^2}\dd{x}\int_{-\infty}^{+\infty}e^{-y^2}\dd{y} \nonumber \\
+        \text{化为累次积分有}                                                                                                                                                    \nonumber    \\
+                                                                                            & = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-(x^2+y^2)}\dd{x}\dd{y}.  \nonumber \\
+        \text{相当于在平面内求此积分,化为极坐标有}                                                                                                                                         \nonumber    \\
+        \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-\rho^2}\rho\dd{\rho}\dd{\theta} & = \int_{0}^{2\pi}\dd{\theta}\int_{0}^{+\infty}e^{-\rho^2}\rho\dd{\rho}       \nonumber   \\
+                                                                                            & = \pi                                                                         \nonumber  \\
+        \tf \int_{-\infty}^{+\infty}e^{-t^2}\dd{t}                                          & = \sqrt{\pi}.
     \end{align}
 }
 通过证明Poisson积分,我们可以得到正态分布的PDF重要性质
 \begin{equation}
-    \int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\dd x = 1
+    \int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\dd{x} = 1
 \end{equation}
 \textbf{图形特征}
 \begin{figure}[h]
@@ -201,7 +201,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 当$\mu=0,\sigma=1$时,称为\vocab{标准正态分布},记为$X\sim N(0,1)$,PDF用$\phi(x )$表示,CDF用$\Phi(x )$表示:
 \leftnote[1.1cm]{\textbf{\color{red}$\phi(x)$为偶函数.}}
 \begin{align}
-    \phi(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} &  & \Phi(x ) = \int_{-\infty}^{x}\phi(t)\dd t
+    \phi(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} &  & \Phi(x ) = \int_{-\infty}^{x}\phi(t)\dd{t}
     \label{eq:2.13}
 \end{align}
 \thm{}{
@@ -258,7 +258,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
         F_Y(y ) = \Pr{Y\leq y } = \Pr{g(X)\leq y } = \Pr{X\in C_y },\,\mbox{其中}\,C_y = \{x | g(x )\leq y \}.
     \end{split}
 \end{equation}
-之后通过积分$\int_{C_y }f_X(x )\dd x$求得CDF.
+之后通过积分$\int_{C_y }f_X(x )\dd{x}$求得CDF.
 \exc{离散变量函数导出PMF}{
     设随机变量$X$的分布律为
     \begin{center}
@@ -289,13 +289,13 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     设$X$服从\textit{标准正态分布},求$Y=2X^2+1$的PDF
 }
 \sol{
-    要求PDF,不妨先求Y的CDF $F_Y(y )$ i.e. $\Pr{Y\leq y }$,代入有
+    要求PDF,不妨先求Y的CDF $F_Y(y )$ \ie $\Pr{Y\leq y }$,代入有
     \begin{align*}
         F_Y(y ) = \Pr{2X^2 +1 \leq y} & = \Pr{\sqrt{-\frac{y-1}{2}}\leq X \leq \sqrt{\frac{y-1}{2}}}                                                                                                                                                    \\
                                       & =\begin{cases*}
-                                             {\displaystyle\int_{-\sqrt{\frac{y-1}{2}}}^{\sqrt{\frac{y-1}{2}}}f_X(x )\dd x} & $y> 1$ \\
-                                             0                                                                              & else
-                                         \end{cases*}                                                                                                                        \\
+                                             {\displaystyle\int_{-\sqrt{\frac{y-1}{2}}}^{\sqrt{\frac{y-1}{2}}}f_X(x )\dd{x}} & $y> 1$ \\
+                                             0                                                                               & else
+                                         \end{cases*}                                                                                                                       \\
                                       & = \begin{cases*}
                                               F_X\left(\sqrt{\frac{y-1}{2}}\right) - F_X\left(-\sqrt{\frac{y-1}{2}}\right) & $y> 1$ \\
                                               0                                                                            & else
