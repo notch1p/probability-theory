@@ -4,11 +4,11 @@
 \dfn{样本空间}{
     考虑样本空间集合$S$,我们有$S\coloneqq\{\mbox{所有样本点}\}$.
 }
-由定义,我们可以得到几种特殊的样本空间：
+由定义,我们可以得到几种特殊的样本空间:
 \begin{itemize}
-    \item $\varnothing$事件：不可能发生的事件.
+    \item $\varnothing$事件:不可能发生的事件.
     \item $S-\varnothing$发生的事件.
-    \item 基本事件$\omega$：$|\omega|=1$ \ie 基本事件只含有一个样本点.
+    \item 基本事件$\omega$:$|\omega|=1$ \ie 基本事件只含有一个样本点.
 \end{itemize}
 
 \thm{De Morgan律}{
@@ -44,7 +44,7 @@
 }
 \section{概率}
 \dfn{概率}{
-    \textit{(Kolmogorov公理化定义)}设有随机试验$E$且与之对应的样本空间$S$,考虑事件$A$\\
+    \emph{(Kolmogorov公理化定义)}设有随机试验$E$且与之对应的样本空间$S$,考虑事件$A$\\
     \[\mathrm{for}\;\forall A\in E, \mathrm{if}\]
     \begin{enumerate}[label=\bfseries\protect\circled{\arabic*}]
         \item $0\leq P(A)\leq 1$
@@ -55,7 +55,7 @@
     则称$P$为$S$上的\vocab{概率}.
 }
 \subsection{概率的性质}
-由上面的定义我们能够得到概率的性质：
+由上面的定义我们能够得到概率的性质:
 \begin{enumerate}
     \item
           $\Pr{\varnothing}=0$
@@ -66,11 +66,11 @@
     \item
           $\Pr{A-B} = \Pr{A} - \Pr{AB}\Rightarrow\ (A-B) \cap B = \varnothing$
     \item
-          \textit{（单调性）}$B\subseteq A \Rightarrow \Pr{B}\leq\Pr{A}$
+          \emph{(单调性)}$B\subseteq A \Rightarrow \Pr{B}\leq\Pr{A}$
     \item
           若满足5,由4可得$\Pr{A-B} = \Pr{A} - \Pr{B}$
     \item
-          \textit{（容斥原理）}
+          \emph{(容斥原理)}
           $\Pr{A\cup B}=\Pr{A} + \Pr{B} - \Pr{AB}$
 \end{enumerate}
 \section{条件概率}
@@ -104,7 +104,7 @@
     \end{align*}
 }
 \subsection{乘法公式}
-由条件概率的定义,我们可以得到\vocab{乘法公式}：
+由条件概率的定义,我们可以得到\vocab{乘法公式}:
 \thm{乘法公式}{
     \begin{align}
         \begin{split}
@@ -114,11 +114,11 @@
         \end{split}
     \end{align}
 }
-\ex{"买彩票"}{
-    第一次买中的概率为$\frac{1}{2}$,第二次买中而第一次未中的概率是$\frac{7}{10}$,第三次买中而前两次未中的概率是$\frac{9}{10}$,求三次都未中的概率.
+\ex{``彩票"}{
+    第一次买中的概率为$\dfrac{1}{2}$,第二次买中而第一次未中的概率是$\dfrac{7}{10}$,第三次买中而前两次未中的概率是$\dfrac{9}{10}$,求三次都未中的概率.
 }
 \sol{
-    以$A_i(i=1,2,3)$表示事件「第$i$次买中」,以B表示事件「三次都未中」,那么由\eqref{eq:mul}\\
+    以$A_i(i=1,2,3)$表示事件``第$i$次买中",以B表示事件``三次都未中",那么由\eqref{eq:mul}\\
     \begin{align*}
         \bc B      & =\overline{A_1}\overline{A_2}\overline{A_3}                                                             \\
         \tf \Pr{B} & = \Pr{\overline{A_1}\overline{A_2}\overline{A_3}}                                                       \\
@@ -127,7 +127,7 @@
                    & = \frac{3}{200}
     \end{align*}
 }
-\qs{P28-19}{
+\qs{P\textsubscript{28}19}{
     袋中装有$a$个红球,$b$个白球,每次自袋中有放回地任取一球,并同时再放入$m$个与之相同的求,连续如此进行$2n$次,求前$n$次为红球,后$n-1$次为白球,第$2n$次为红球的概率.
 }
 \sol{
@@ -142,7 +142,7 @@
         \Pr{A_{2n} | A_1\cdots A_n B_{n+1} B_{n+2}\cdots B_{2n-1}}
     \end{align*}
     此式太长,不妨将其分成三部分:
-    \begin{enumerate}
+    \begin{enumerate}[label=\bfseries\protect\circled{\arabic*}]
         \item \(\Pr{A_1}\Pr{A_2 | A_1}\cdots\Pr{A_n | A_1 A_2\cdots A_{n-1}}\) (前n个红球)
         \item \(\Pr{B_{n+1} | A_1 A_2\cdots A_n}\Pr{B_{n+2} | \cdots B_{n+1}} \cdots \Pr{B_{2n-1} | \cdots B_{2n-2}}\) (后n-1个白球)
         \item \(\Pr{A_{2n} | A_1\cdots A_n B_{n+1} B_{n+2}\cdots B_{2n-1}}\) (最后的红球)
@@ -178,22 +178,22 @@
     \end{equation}
 }
 \newpage
-\qs{P14-10}{
+\qs{P\textsubscript{14}10}{
     从1到9的整数中有放回地依次随机抽取3次,求取出的3个数之积能被10整除的概率.
 }
 显然这三个数中必有两数为$5$和$\{2,4,6,8\}$,因此
 \pf{法一}{
     分情况讨论
-    \begin{enumerate}
+    \begin{enumerate}[label=\bfseries\protect\circled{\arabic*}]
         \item A = \{三个数里有两个5和一个偶数\}
         \item B = \{三个数里有一个5和两个偶数\}
         \item C = \{三个数里有一个5一个偶数和一个其他的奇数\}
     \end{enumerate}
     那么有
-    \(\Pr{A} = \frac{\binom{4}{1}\cdot 3}{9^3}\)\,\,%
-    \(\Pr{B} = \frac{\binom{4}{1}\cdot 3+\tbinom{4}{2}\mathrm{A_3^3}}{9^3}\)\,\,%
-    \(\Pr{C} = \frac{\binom{4}{1} \binom{4}{1} \mathrm{A_3^3}}{9^3}\)%
-    相加得\(\frac{156}{729}\).
+    \(\Pr{A} = \dfrac{\binom{4}{1}\cdot 3}{9^3}\)\,\,%
+    \(\Pr{B} = \dfrac{\binom{4}{1}\cdot 3+\tbinom{4}{2}\mathrm{A_3^3}}{9^3}\)\,\,%
+    \(\Pr{C} = \dfrac{\binom{4}{1} \binom{4}{1} \mathrm{A_3^3}}{9^3}\)%
+    相加得\(\dfrac{156}{729}\).
 }
 \pf{法二}{
     对立事件\\
@@ -206,27 +206,27 @@
     \end{align*}
 }
 \pf{法三}{
-    另一种分情况讨论（笔者的分法）
-    \begin{enumerate}
+    另一种分情况讨论(笔者的分法)
+    \begin{enumerate}[label=\bfseries\protect\circled{\arabic*}]
         \item A = \{三个数中有两个相同的\}
         \item B = \{三个数全不同\}
-              \reversemarginpar\marginnote[\footnotesize\color{red}\textbf{此项须要分成下述两项,否则会重}]{}
-              \begin{enumerate}[label*=\arabic*.]
+              \leftnote{\color{red}\textbf{此项须要分成下述两项,否则会重}}
+              \begin{enumerate}
                   \item$B_1$ = \{三个数全不同且有两个偶数\}
                   \item$B_2$ = \{三个数全不同且有两个奇数\}
               \end{enumerate}
     \end{enumerate}
     那么有
-    \(\Pr{A} = \frac{\binom{4}{1}\binom{3}{1}+ \binom{4}{1}\binom{3}{1}}{9^3}\)\,\,%
-    \(\Pr{B_1} = \frac{\binom{4}{1}\binom{4}{1}\binom{3}{1}}{9^3}\)\,\,%
-    \(\Pr{B_2} = \frac{\binom{4}{1}\binom{4}{1}\mathrm{A_3^3}}{9^3}\)%
-    相加得\(\frac{156}{729}\).
+    \(\Pr{A} = \dfrac{\binom{4}{1}\binom{3}{1}+ \binom{4}{1}\binom{3}{1}}{9^3}\)\,\,%
+    \(\Pr{B_1} = \dfrac{\binom{4}{1}\binom{4}{1}\binom{3}{1}}{9^3}\)\,\,%
+    \(\Pr{B_2} = \dfrac{\binom{4}{1}\binom{4}{1}A_3^3}{9^3}\)%
+    相加得\(\dfrac{156}{729}\).
 }
 \nt{
     讨论各种情况的概率进而求得所求事件的概率的方法实际上是\vocab{全概率公式}的一种体现.
 }
 \subsection{Beyes公式}
-\vocab{全概公式}是通过计算某一事件会发生的\textit{所有原因和情况的可能性大小}来计算该事件发生的概率,而\vocab{Beyes}公式则与之相反,考察一件已经发生的事情的\textit{各种原因或或情况的可能性大小}.
+\vocab{全概公式}是通过计算某一事件会发生的\emph{所有原因和情况的可能性大小}来计算该事件发生的概率,而\vocab{Beyes}公式则与之相反,考察一件已经发生的事情的\emph{各种原因或或情况的可能性大小}.
 \thm{Beyes公式}{
     设$A_1,A_2,\cdots,A_n$是一个完备事件组,且$\forall i(i \in [1,n]\to\Pr{A_i} >0)$,则对任一可能发生的事件$B$,有
     \begin{equation}

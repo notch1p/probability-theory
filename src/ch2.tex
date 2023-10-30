@@ -66,16 +66,15 @@
 具有上述性质的函数一定是某个随机变量的CDF.
 \newpage
 \subsection{离散型随机变量的分布函数}
-在上述基础上,对于离散型随机变量$X$有CDF:
-\[F(x) = \Pr(X\leq X) = \sum_{x_i\leq x}\Pr(X=x_i)\]
-
-\begin{figure}[h]
+\begin{wrapfigure}[10]{r}{.3\textwidth}
     \centering
     \includegraphics[scale=.5]{cdf_discrete}
     \caption{阶梯型CDF}
-\end{figure}
+\end{wrapfigure}
+在上述基础上,对于离散型随机变量$X$有CDF:
+\[F(x) = \Pr(X\leq X) = \sum_{x_i\leq x}\Pr(X=x_i)\]
 $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
-可以看出阶梯型函数符合CDF之性质:总是右连续的;而作为一个分段函数来说,其各段区间总是左闭右开的.
+可以看出阶梯型函数符合CDF之性质:总是右连续的;而作为一个分段函数来说,其各段区间总是(习惯上)左闭右开的.
 \nt{
     考题中由CDF反推分布列可以根据每一个左侧端点得到对应的随机变量$x_i$.\\
     计算分布列时,有公式$\Pr{a\leq X< b} = F(b) - F(a)$.
@@ -93,12 +92,12 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \begin{enumerate}
     \item $f(x)\geq 0$;
     \item $\int_{-\infty}^{+\infty}f(x)\dd{x} = 1$.
-    \item $F'(x) = f(x)$. 若f(x)在x处连续
+    \item $F'(x) = f(x)$. 若$f(x)$在$x$处连续
 \end{enumerate}
 \nt{
     若某个随机变量的CDF可以写成PDF积分函数的形式,则称其为连续型随机变量.
 }
-\pf{证明    X取任一特值的概率为$0$}{
+\pf{证明\quad $X$取任一特值的概率为$0$}{
     \begin{align*}
         \mbox{考虑极限}
         \Pr{X=a} & =\lim_{\Delta x \to 0^+}\Pr{a-\Delta x \le X \leq a}    \\
@@ -127,15 +126,13 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 }
 \leftnote[-1cm]{U for Uniform}
 设$[a,b]$之间的任意子区间为$[c,d]$,由上式可得$\Pr{c<X<d}=\int_{c }^{d }\frac{1}{b-a}\dd{x} = \frac{d-c}{b-a}$.\\因而我们可以得到
-\cor{均匀分布的CDF}{
-    \begin{equation}
-        F(x) = \begin{cases}
-            0,               & x < a     \\
-            \frac{x-a}{b-a}, & a\leq x<b \\
-            1,               & x\geq b
-        \end{cases}
-    \end{equation}
-}
+\begin{equation}
+    F(x) = \begin{cases}
+        0,               & x < a     \\
+        \frac{x-a}{b-a}, & a\leq x<b \\
+        1,               & x\geq b
+    \end{cases}
+\end{equation}
 \subsubsection{指数分布}
 \dfn{指数分布}{
     若随机变量$X$的概率密度为
@@ -148,14 +145,12 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     则称X服从参数为$\lambda$ 的\vocab{指数分布},记为$X\sim E(\lambda)$.
 }
 积分得
-\cor{指数分布的CDF}{
-    \begin{equation}
-        F(x)=\begin{cases}
-            1-e^{-\lambda x}, & x>0     \\
-            0,                & x\leq 0
-        \end{cases}
-    \end{equation}
-}
+\begin{equation}
+    F(x)=\begin{cases}
+        1-e^{-\lambda x}, & x>0     \\
+        0,                & x\leq 0
+    \end{cases}
+\end{equation}
 \subsubsection{正态分布}
 \dfn{正态分布}{
     若随机变量$X$的概率密度为
@@ -165,23 +160,22 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     其中$\mu,\sigma(\sigma>0)$为常数,则称$X$服从参数为$\mu,\sigma^2$的\vocab{正态分布},记为$X\sim N(\mu,\sigma^2)$.
 }
 \qs{Poisson积分}{
-\textbf{不使用Wallis公式},求Poisson积分\;$\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\dd{t}.$
+\textbf{不使用Wallis公式},求Poisson积分\;$\displaystyle\int_{-\infty}^{+\infty}e^{-t^2}\dd{t}$.
 }
-
 \sol{
     \textit{转化为求累次积分}
     \begin{align}
-        \text{要求原式,不妨先求其平方,亦即}                                                                                                                                            \nonumber    \\
-        \left(\int_{-\infty}^{+\infty}e^{-t^2}\dd{t}\right)^2                               & = \int_{-\infty}^{+\infty}e^{-x^2}\dd{x}\int_{-\infty}^{+\infty}e^{-y^2}\dd{y} \nonumber \\
-        \text{化为累次积分有}                                                                                                                                                    \nonumber    \\
-                                                                                            & = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-(x^2+y^2)}\dd{x}\dd{y}.  \nonumber \\
-        \text{相当于在平面内求此积分,化为极坐标有}                                                                                                                                         \nonumber    \\
-        \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}e^{-\rho^2}\rho\dd{\rho}\dd{\theta} & = \int_{0}^{2\pi}\dd{\theta}\int_{0}^{+\infty}e^{-\rho^2}\rho\dd{\rho}       \nonumber   \\
-                                                                                            & = \pi                                                                         \nonumber  \\
-        \tf \int_{-\infty}^{+\infty}e^{-t^2}\dd{t}                                          & = \sqrt{\pi}.
+        \text{要求原式,不妨先求其平方,亦即}                                                                                                                                            \nonumber     \\
+        \left(\int_{-\infty}^{+\infty}e^{-t^2}\dd{t}\right)^2 & = \int_{-\infty}^{+\infty}e^{-x^2}\dd{x}\int_{-\infty}^{+\infty}e^{-y^2}\dd{y} \nonumber                                \\
+        \text{化为累次积分有}                                                                                                                                                    \nonumber     \\
+                                                              & = \iint_{\RR[2]}e^{-(x^2+y^2)}\dd{x}\dd{y}.  \nonumber                                                                  \\
+        \text{$\RR[2]$即$xOy$面,化为极坐标有}                                                                                                                                         \nonumber \\
+        \iint_{\RR[2]}e^{-\rho^2}\rho\dd{\rho}\dd{\theta}     & = \int_{0}^{2\pi}\dd{\theta}\int_{0}^{+\infty}e^{-\rho^2}\rho\dd{\rho}       \nonumber                                  \\
+                                                              & = \pi                                                                         \nonumber                                 \\
+        \tf \int_{-\infty}^{+\infty}e^{-t^2}\dd{t}            & = \sqrt{\pi}.
     \end{align}
 }
-通过证明Poisson积分,我们可以得到正态分布的PDF重要性质
+通过计算Poisson积分,我们可以得到正态分布的PDF重要性质:
 \begin{equation}
     \int_{-\infty}^{+\infty}\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\dd{x} = 1
 \end{equation}
@@ -199,21 +193,21 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     \item 密度曲线在$x=\mu\pm\sigma$处有拐点且以$x$轴为渐近线
 \end{enumerate}
 当$\mu=0,\sigma=1$时,称为\vocab{标准正态分布},记为$X\sim N(0,1)$,PDF用$\phi(x )$表示,CDF用$\Phi(x )$表示:
-\leftnote[1.1cm]{\textbf{\color{red}$\phi(x)$为偶函数.}}
+\leftnote[1.1cm]{\textbf{\color{red}显然$\phi(x)$为偶函数.}}
 \begin{align}
     \phi(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}} &  & \Phi(x ) = \int_{-\infty}^{x}\phi(t)\dd{t}
     \label{eq:2.13}
 \end{align}
-\thm{}{
+\nt{
     设$X\sim N(\mu,\sigma^2)$,则$Y= \frac{X-\mu}{\sigma}\sim N(0,1)$.\\
-    计算$\Pr{Y\leq x}$时,可转化为计算$\Pr{X\leq \mu + \sigma x}$,计算此时的$\Phi(x)$即得证.j
+    计算$\Pr{Y\leq x}$时,可转化为计算$\Pr{X\leq \mu + \sigma x}$,计算此时的$\Phi(x)$即得证.
 }
 这说明任意一般的正态分布都可以通过\textbf{线性变换}转化为标准正态分布.
 因此X的分布函数也可以写成
 \[F(x) = \Phi\left(\frac{x-\mu}{\sigma}\right)\]
 \[\Pr{a<X<b}= \Pr{\frac{a-\mu}{\sigma}<Y<\frac{b-\mu}{\sigma}} = \Phi\left(\frac{b-\mu}{\sigma}\right) - \Phi\left(\frac{a-\mu}{\sigma}\right)\]
 \section{随机变量函数的分布}
-前面提到Theorem 2.4.1. 其中的$Y=\frac{X-\mu}{\sigma}$是随机变量$X$的函数,因此$Y$也是随机变量.
+前面提到计算$\Pr{Y\leq x}$时,可转化为计算$\Pr{X\leq \mu + \sigma x}$, 其中的$Y=\frac{X-\mu}{\sigma}$是随机变量$X$的函数,因此$Y$也是随机变量.
 \dfn{随机变量函数}{
     若存在一个函数$g(x)$ s.t. 随机变量$X,Y$满足
     \begin{equation*}
@@ -241,15 +235,15 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \leftnote{分布律:离散变量\\PDF:连续变量}
 通过上述定义,不难发现连续随机变量的函数\textit{不一定}是连续型随机变量.
 \nt{
-    考虑\textbf{符号函数}作为映射法则:
+    考虑\emph{符号函数}作为映射法则:
     \begin{equation*}
-        Y = \sign(X) = \begin{cases}
-            1, & X>0  \\
-            0, & X= 0 \\
-            -1 & X<0
+        Y = \sign(x) = \begin{cases}
+            1, & x>0  \\
+            0, & x= 0 \\
+            -1 & x<0
         \end{cases}
     \end{equation*}
-    显然$Y=0,\pm 1$,是一个离散型随机变量.因此,在连续型的情况下,$Y$的连续性由其自身决定.
+    显然$Y=0,\pm 1$, 是一个离散型随机变量.因此, 在连续型的情况下, $Y$的连续性由其自身决定.
 }
 \subsubsection{导出$Y$的PDF}
 已知$X$的CDF\,$F_X(x )$或PDF\,$f_X(x )$,则$Y=g(x )$的CDF可以通过以下公式求得:
@@ -260,15 +254,14 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \end{equation}
 之后通过积分$\int_{C_y }f_X(x )\dd{x}$求得CDF.
 \exc{离散变量函数导出PMF}{
-    设随机变量$X$的分布律为
+    给出随机变量$X$的分布律如下, 试求$Y=X^2$的分布律:
     \begin{center}
         \begin{tabular}{@{}cccccc@{}}
             \toprule
-            $X$   & $-2$          & $-1$          & $0$           & $1$            & $3$             \\ \midrule
-            $p_i$ & $\frac{1}{5}$ & $\frac{1}{6}$ & $\frac{1}{5}$ & $\frac{1}{15}$ & $\frac{11}{30}$ \\ \bottomrule
+            $X$   & $-2$  & $-1$  & $0$   & $1$    & $3$     \\ \midrule
+            $p_i$ & $1/5$ & $1/6$ & $1/5$ & $1/15$ & $11/30$ \\ \bottomrule
         \end{tabular}
     \end{center}
-    试求$Y=X^2$的分布律
 }
 \sol{
     由题意得$Y=0,1,4,9,$,因此利用\eqref{eq:2.14}计算得
@@ -280,8 +273,8 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
         $\tf$\;
         \begin{tabular}{@{}ccccc@{}}
             \toprule
-            $Y$   & $0$           & $1$            & $4$           & $9$             \\ \midrule
-            $p_i$ & $\frac{1}{5}$ & $\frac{7}{30}$ & $\frac{1}{5}$ & $\frac{11}{30}$ \\ \bottomrule
+            $Y$   & $0$   & $1$    & $4$   & $9$     \\ \midrule
+            $p_i$ & $1/5$ & $7/30$ & $1/5$ & $11/30$ \\ \bottomrule
         \end{tabular}
     \end{center}
 }
@@ -303,18 +296,17 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     \end{align*}
     \begin{align*}
         \tf\; f_Y(y ) = F_Y'(y) = \begin{cases*}
-                                      {\displaystyle\sqrt{2}\,\frac{f_X\left(\sqrt{\frac{y-1}{2}}\right)}{4\sqrt{y-1}} + \sqrt{2}\,\frac{f_X\left(-\sqrt{\frac{y-1}{2}}\right)}{4\sqrt{y-1}}} & $y > 1$ \\
-                                      0                                                                                                                                                       & else
+                                      {\displaystyle\sqrt{2}\,\frac{\color{red}f_X\left(\sqrt{\frac{y-1}{2}}\right)}{4\sqrt{y-1}} + \sqrt{2}\,\frac{\color{red}f_X\left(-\sqrt{\frac{y-1}{2}}\right)}{4\sqrt{y-1}}} & $y > 1$ \\
+                                      0                                                                                                                                                                             & else
                                   \end{cases*}
     \end{align*}
     \begin{equation*}
-        \bc\quad\phi(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\;\eqref{eq:2.14}\quad\mbox{注意到$\phi(x)$为偶函数}
+        \tf\quad\phi(x ) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\;\eqref{eq:2.14}\quad\text{注意到$\phi(x)$为偶函数, 合并上述\color{red}两项}
     \end{equation*}
-    Therefore we have
     \begin{align*}
-        f_Y(y ) = \begin{cases*}
-                      \frac{1}{2\sqrt{\pi (y-1)}}e^{-\frac{y-1}{4}} & $y> 1$ \\
-                      0                                             & else
-                  \end{cases*}
+        \Longrightarrow f_Y(y ) = \begin{cases*}
+                                      \frac{1}{2\sqrt{\pi (y-1)}}e^{-\frac{y-1}{4}} & $y> 1$ \\
+                                      0                                             & else
+                                  \end{cases*}
     \end{align*}
 }
