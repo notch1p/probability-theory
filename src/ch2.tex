@@ -118,7 +118,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     \begin{equation}
         f(x)=\begin{cases}
             \frac{1}{b-a}, & a<x<b \\
-            0,             & else
+            0,             & otherwise
         \end{cases}
     \end{equation}
 
@@ -287,17 +287,17 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
         F_Y(y ) = \Pr{2X^2 +1 \leq y} & = \Pr{\sqrt{-\frac{y-1}{2}}\leq X \leq \sqrt{\frac{y-1}{2}}}                                                                                                                                                    \\
                                       & =\begin{cases*}
                                              {\displaystyle\int_{-\sqrt{\frac{y-1}{2}}}^{\sqrt{\frac{y-1}{2}}}f_X(x )\dd{x}} & $y> 1$ \\
-                                             0                                                                               & else
+                                             0                                                                               & otherwise
                                          \end{cases*}                                                                                                                       \\
                                       & = \begin{cases*}
                                               F_X\left(\sqrt{\frac{y-1}{2}}\right) - F_X\left(-\sqrt{\frac{y-1}{2}}\right) & $y> 1$ \\
-                                              0                                                                            & else
+                                              0                                                                            & otherwise
                                           \end{cases*}
     \end{align*}
     \begin{align*}
         \tf\; f_Y(y ) = F_Y'(y) = \begin{cases*}
                                       {\displaystyle\sqrt{2}\,\frac{\color{red}f_X\left(\sqrt{\frac{y-1}{2}}\right)}{4\sqrt{y-1}} + \sqrt{2}\,\frac{\color{red}f_X\left(-\sqrt{\frac{y-1}{2}}\right)}{4\sqrt{y-1}}} & $y > 1$ \\
-                                      0                                                                                                                                                                             & else
+                                      0                                                                                                                                                                             & otherwise
                                   \end{cases*}
     \end{align*}
     \begin{equation*}
@@ -306,7 +306,7 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
     \begin{align*}
         \Longrightarrow f_Y(y ) = \begin{cases*}
                                       \frac{1}{2\sqrt{\pi (y-1)}}e^{-\frac{y-1}{4}} & $y> 1$ \\
-                                      0                                             & else
+                                      0                                             & otherwise
                                   \end{cases*}
     \end{align*}
 }

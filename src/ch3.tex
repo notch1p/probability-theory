@@ -132,8 +132,8 @@
     设随机变量$(X,Y )$的概率密度为
     \begin{align*}
         f(x,y) = \begin{cases}
-                     k(6-x-y), & 0<x<2, 2<y<4 \\
-                     0,        & \mbox{else}
+                     k(6-x-y), & 0<x<2, 2<y<4     \\
+                     0,        & \mbox{otherwise}
                  \end{cases}
     \end{align*}
     求\begin{enumerate*}[label=\bfseries\protect\circled{\arabic*}]
@@ -148,7 +148,7 @@
 \begin{align*}
     \iint_{\RR[2]}f(x,y)\dd{x}\dd{y} =\begin{cases}
                                           \iint_Dk(6-x-y)\dd{x}\dd{y}, & x\in D=\{(x,y)|x\in (0,2) y\in (2,4)\} \\
-                                          0,                           & \mbox{else}
+                                          0,                           & \mbox{otherwise}
                                       \end{cases} =1
 \end{align*}
 \[\ie \iint_Dk(6-x-y )\dd{x}\dd{y} = \int_{0}^{2}\int_{2}^{4}k(6-x-y )\dd{x}\dd{y} = 1,\mbox{计算得}k = \frac{1}{8}.\]
@@ -164,13 +164,13 @@
     (3)根据\ref{sec:marginPDF},可以得到
     \begin{align*}
         f_X(x) & = \begin{cases}
-                       {\displaystyle\frac{1}{8}\cdot\int_{2}^{4-x}(6-x-y)\dd{y} = \frac{1}{8}(6-4x+\frac{1}{2}x^2)}, & 0<x<2       \\
-                       0,                                                                                             & \mbox{else}
+                       {\displaystyle\frac{1}{8}\cdot\int_{2}^{4-x}(6-x-y)\dd{y} = \frac{1}{8}(6-4x+\frac{1}{2}x^2)}, & 0<x<2            \\
+                       0,                                                                                             & \mbox{otherwise}
                    \end{cases}                                          \\
-               & \mbox{同理可得}                                                                                                                                                               \\
+               & \mbox{同理可得}                                                                                                                                                                    \\
         f_Y(y) & = \begin{cases}
-                       {\displaystyle\frac{1}{8}\cdot\int_{0}^{4-y}(6-x-y)\dd{x} = \mbox{(\dots\;略)}},\hphantom{(4x+\frac{1}{2}x^2)} & 2<y<4       \\
-                       0,                                                                                                            & \mbox{else}
+                       {\displaystyle\frac{1}{8}\cdot\int_{0}^{4-y}(6-x-y)\dd{x} = \mbox{(\dots\;略)}},\hphantom{(4x+\frac{1}{2}x^2)} & 2<y<4            \\
+                       0,                                                                                                            & \mbox{otherwise}
                    \end{cases}
     \end{align*}
     }
@@ -179,8 +179,8 @@
         设$G$是平面上的有界区域,其面积为$A$,若二维随机变量$(X,Y )$具有概率密度函数
         \begin{align}
             f(x,y)=\begin{cases}
-                       \frac{1}{A}, & (x,y)\in G  \\
-                       0,           & \mbox{else}
+                       \frac{1}{A}, & (x,y)\in G       \\
+                       0,           & \mbox{otherwise}
                    \end{cases}
         \end{align}
         则称$(X,Y )$在$G$上服从\vocab{二维均匀分布}.
@@ -200,12 +200,12 @@
         \begin{align}
             \begin{split}
                 f_X(x) & = \begin{cases}
-                               \frac{1}{b-a}, & a<x<b       \\
-                               0,             & \mbox{else}
+                               \frac{1}{b-a}, & a<x<b            \\
+                               0,             & \mbox{otherwise}
                            \end{cases} \\
                 f_Y(y) & = \begin{cases}
-                               \frac{1}{d-c}, & c<y<d       \\
-                               0,             & \mbox{else}
+                               \frac{1}{d-c}, & c<y<d            \\
+                               0,             & \mbox{otherwise}
                            \end{cases}
             \end{split}
         \end{align}
@@ -219,16 +219,16 @@
         由题意得,其PDF为
         \begin{align*}
             f(x,y) & = \begin{cases}
-                           \frac{1}{\pi}, & x^2+y^2\leq 1 \\
-                           0,             & \mbox{else}
+                           \frac{1}{\pi}, & x^2+y^2\leq 1    \\
+                           0,             & \mbox{otherwise}
                        \end{cases}
         \end{align*}
         根据\eqref{eq:3.12},只需考虑点在圆域内的情况,易得
         \begin{align*}
             f_X(x)     & = \frac{1}{\pi}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\dd{y} = \frac{2}{\pi}\sqrt{1-x^2}. \\
             \tf f_X(x) & = \begin{cases}
-                               \frac{2}{\pi}\sqrt{1-x^2}, & -1\leq x\leq 1 \\
-                               0,                         & \mbox{else}
+                               \frac{2}{\pi}\sqrt{1-x^2}, & -1\leq x\leq 1   \\
+                               0,                         & \mbox{otherwise}
                            \end{cases}
         \end{align*}
         因为$x^2 + y^2 \leq 1$是\emph{轮换式},将$x$换成$y$即可得到$f_Y(y)$.
@@ -302,56 +302,55 @@
         \label{eq:3.18}
     \end{equation}
     则称$X,Y$相互独立.
-\mprop{}{
-    \eqref{eq:3.18}和\eqref{eq:3.15}是等价命题.
-}
-\pf{证明}{
-    (\textit{充分性})对\eqref{eq:3.18}两边积分有
-    \begin{align*}
-        \int_{-\infty}^{x}\int_{-\infty}^{y}f(x,y)\dd{x}\dd{y} = F(x,y)
-         & = \int_{-\infty }^{x}\int_{-\infty}^{y}f_X(x)f_Y(y)\dd{x}\dd{y}                \\
-         & = \int_{-\infty}^{x}f_X(x)\dd{x}\int_{-\infty}^{y}f_Y(y)\dd{y}   \text{(分离变量)} \\
-         & = F_X(x)F_Y(y).
-    \end{align*}
-    (\textit{必要性})对\eqref{eq:3.15}两边求两次偏导有
-    \[\pdv{F(x,y)}{x}{y} = f(x,y) = \pdv{F_X}{x}\pdv{F_Y}{y} = f_X(x)f_Y(y)\]
-}
-同时,我们通过上述证明,得到了重要的推论:\\
-\cor{快速判断独立性}{
-    若$f(x,y)$是\emph{可分离变量}的,且$x,y$的取值范围独立$\;\iff\;X,Y$独立.
-}
-\exc{P\textsubscript{78}14}{
-    \[ f(x,y) = \begin{cases}
-            \dfrac{1}{2x^2y}, & 1\leq x \leq +\infty, \dfrac{1}{x}\leq y \leq x, \\
-            0,                & \text{else}
-        \end{cases}\]
-    判断$X,Y$是否独立.
-}
-\sol{
-    要判断其独立性,先求两个边缘密度:\\
-    \[f_X(x) = \int_{-\infty}^{+\infty}f(x,y)\dd{y} = \begin{cases}
-            \displaystyle\int_{1/x}^{x}\dfrac{1}{2x^2y} = \dfrac{\ln{x}}{2x^2}, & 1\leq x \leq +\infty, \\
-            0,                                                                  & \text{else}
-        \end{cases}\]
-    \newpage
-    对于$Y$,在下图第一象限阴影区域内对$x$积分
-    \begin{figure}[h]
-        \centering
-        \includegraphics[scale=.15]{p78-14}
-    \end{figure}
+    \mprop{}{
+        \eqref{eq:3.18}和\eqref{eq:3.15}是等价命题.
+    }
+    \pf{证明}{
+        (\textit{充分性})对\eqref{eq:3.18}两边积分有
+        \begin{align*}
+            \int_{-\infty}^{x}\int_{-\infty}^{y}f(x,y)\dd{x}\dd{y} = F(x,y)
+             & = \int_{-\infty }^{x}\int_{-\infty}^{y}f_X(x)f_Y(y)\dd{x}\dd{y}                \\
+             & = \int_{-\infty}^{x}f_X(x)\dd{x}\int_{-\infty}^{y}f_Y(y)\dd{y}   \text{(分离变量)} \\
+             & = F_X(x)F_Y(y).
+        \end{align*}
+        (\textit{必要性})对\eqref{eq:3.15}两边求两次偏导有
+        \[\pdv{F(x,y)}{x}{y} = f(x,y) = \pdv{F_X}{x}\pdv{F_Y}{y} = f_X(x)f_Y(y)\]
+    }
+    同时,我们通过上述证明,得到了重要的推论:\\
+    \cor{快速判断独立性}{
+        若$f(x,y)$是\emph{可分离变量}的,且$x,y$的取值范围独立$\;\iff\;X,Y$独立.
+    }
+    \exc{P\textsubscript{78}14}{
+        \[ f(x,y) = \begin{cases}
+                \dfrac{1}{2x^2y}, & 1\leq x \leq +\infty, \dfrac{1}{x}\leq y \leq x, \\
+                0,                & \text{otherwise}
+            \end{cases}\]
+        判断$X,Y$是否独立.
+    }
+    \sol{
+        要判断其独立性,先求两个边缘密度:\\
+        \[f_X(x) = \int_{-\infty}^{+\infty}f(x,y)\dd{y} = \begin{cases}
+                \displaystyle\int_{1/x}^{x}\dfrac{1}{2x^2y} = \dfrac{\ln{x}}{2x^2}, & 1\leq x \leq +\infty, \\
+                0,                                                                  & \text{otherwise}
+            \end{cases}\]
+        对于$Y$,在下图第一象限阴影区域内对$x$积分
+        \begin{figure}[h]
+            \centering
+            \includegraphics[scale=.15]{p78-14}
+        \end{figure}
 
-    设积分区域(阴影部分)为$D$,则将$D$投影到$y$轴上.\href{https://en.wikipedia.org/wiki/Multiple_integral#Normal_domains_on_R2}{(复习)}
-    \leftnote{\color{red}此处的$x$的范围并不是$[1,+\infty]$.应将$D$投影到$y$轴上来讨论$x$的范围(\textit{想累次积分定义})}
-    \[D = D_1 + D_2 = \{x\geq y, 1\leq y\} + \{x\geq 1/y , 0< y \leq 1\}\]
-    \begin{align*}
-        \ie\quad f_Y(y) & = \int_{D_1}f(x,y)\dd{x} + \int_{D_2}f(x,y)\dd{x}                                       \\
-                        & =\begin{cases}
-                               \displaystyle\int_{1/y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 0< y\leq 1, \\
-                               \displaystyle\int_{y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 1\leq y,      \\
-                               \displaystyle 0, \hphantom{;;\int_{y}^{+\infty}\dfrac{1}{2x^2y}}\text{else}
-                           \end{cases}
-                        & = (\cdots)
-    \end{align*}
-    \leftnote{要写出乘积.若判断独立性先枚举特值找反例.}
-    两者相乘,显然不与$f(x,y)$相等.\;\;$\tf\; XY$不独立.
-}
+        设积分区域(阴影部分)为$D$,则将$D$投影到$y$轴上.\href{https://en.wikipedia.org/wiki/Multiple_integral#Normal_domains_on_R2}{(复习)}
+        \leftnote{\color{red}此处的$x$的范围并不是$[1,+\infty]$.应将$D$投影到$y$轴上来讨论$x$的范围(\textit{想累次积分定义})}
+        \[D = D_1 + D_2 = \{x\geq y, 1\leq y\} + \{x\geq 1/y , 0< y \leq 1\}\]
+        \begin{align*}
+            \ie\quad f_Y(y) & = \int_{D_1}f(x,y)\dd{x} + \int_{D_2}f(x,y)\dd{x}                                            \\
+                            & =\begin{cases}
+                                   \displaystyle\int_{1/y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 0< y\leq 1, \\
+                                   \displaystyle\int_{y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 1\leq y,      \\
+                                   \displaystyle 0, \hphantom{;;\int_{y}^{+\infty}\dfrac{1}{2x^2y}}\text{otherwise}
+                               \end{cases}
+                            & = (\cdots)
+        \end{align*}
+        \leftnote{要写出乘积.若判断独立性先枚举特值找反例.}
+        两者相乘,显然不与$f(x,y)$相等.\;\;$\tf\; XY$不独立.
+    }

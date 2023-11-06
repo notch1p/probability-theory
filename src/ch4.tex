@@ -1,0 +1,98 @@
+\chapter{随机变量的数字特征}
+\section{数学期望}
+\subsection{随机变量的数学期望}
+\dfn{}{
+    设离散型随机变量$X$的概率分布为
+    \[\Pr{X = x_i} = p_i,\,i=1,2,\cdots\]
+    若级数$\displaystyle\sum_{i=1}^{\infty}x_ip_i$\emph{绝对收敛},则定义$X$的\vocab{数学期望}为
+    \begin{equation}
+        \EE{X} = \sum_{i}x_ip_i.
+    \end{equation}
+}
+\leftnote[-2.8cm]{复习:绝对收敛:\\$\sum_{i=1}^{+\infty}\abs{x_ip_i}<\infty$}
+\leftnote[-1.6cm]{$\EE,\mathrm{E},E$都是等价的写法.}
+
+上述定义限于离散型随机变量.考虑连续型随机变量$X$,其PDF为$f(x)$.在数轴上取一段长度为$\Delta x\to 0$的区间$[x,x+\Delta x]$,则$X$落入该区间的概率为
+\[\Pr{x\leq X\leq x+\Delta x} = \int_{x}^{x+\Delta x}f(x)\dd{x}\approx f(x)\Delta x.\]
+\leftnote{这称为离散化}
+在数轴上取无限多段这样的小区间并对概率求和,我们有
+\[\sum_ix_if(x_i)\Delta x_i \approx \int_{\RR}xf(x)\dd{x}.\]
+因此可以得到定义:
+\leftnote{并非所有随机变量都有数学期望}
+\dfn{}{
+    设$X$是连续型随机变量,PDF为$f(x)$,若上述积分\emph{绝对收敛},定义$X$的\vocab{数学期望}为
+    \begin{equation}
+        \EE{X} = \int_{\RR}xf(x)\dd{x}.
+    \end{equation}
+}
+\subsection{随机变量函数的数学期望}
+对于随机变量$X$的函数$Y = g(X)$,我们可以通过定义求出$X$的分布而求出$Y$的分布,进而由定义得$Y$的数学期望$\EE{g(X)}$,这做法较繁.\newpage
+\thm{}{
+    设$X$是一个随机变量,$Y=g(X)$,且$E(Y)$存在,于是\\
+    (1)若$X$为离散型随机变量:
+    \begin{equation}
+        \EE{Y}= \EE{g(X)} = \sum_{i}g(x_i)p_i,
+    \end{equation}
+    (2)若$X$为连续型随机变量:
+    \begin{equation}
+        \EE{Y} = \EE{g(X)} =\int_{\RR}g(x)f(x)\dd{x}.
+    \end{equation}
+}
+推广至二维:设$(X,Y)$是二维随机变量,$Z=g(X,Y)$,若$\EE{Z}$存在,则\\
+(1)若为离散型:
+\begin{equation}
+    \EE{Z} = \EE{g(X,Y)} = \sum_{i}\sum_{j}g(x_i,y_j)p_{ij},
+    \label{eq:4.5}
+\end{equation}
+(2)若为连续型:
+\begin{equation}
+    \EE{Z} = \EE{g(X,Y)} = \iint_{\RR[2]}g(x,y)f(x,y)\dd{\sigma}.
+\end{equation}
+\textbf{注意}\quad 实际做题中,积分区域$D\subseteq \RR$, 根据\emph{\color{red}所要求期望的随机变量来决定积分次序}.\;\Eg\,$\EE{X}$---先对$y$积分,再对$x$积分;\,$\EE{Y}$---先对$x$积分,再对$y$积分;\,$\EE{XY}$---两者谁先皆可,但注意不满足Fubini定理的函数.
+\subsection{数学期望的性质}
+\begin{enumerate}
+\item $\EE{c} = c$(c为常数,下同);
+\item $\EE{cX} = c\EE{X}$;
+\item $\EE{X+Y} = \EE{X} + \EE{Y}$;
+\item 若$X,Y$相互独立,则$\EE{XY} = \EE{X}\EE{Y}$.
+\end{enumerate}
+\exc{P\textsubscript{85}5}{
+设随机变量$X$的分布律为
+\begin{center}
+    \begin{tabular}{@{}llll@{}}
+        \toprule
+        $X$   & $-2$  & $0$   & $2$   \\ \midrule
+        $p_i$ & $0.4$ & $0.3$ & $0.3$ \\ \bottomrule
+    \end{tabular}
+\end{center}
+求$\EE{X},\EE{X^2},\EE{(3X^2+5)}$
+}
+\sol{
+由题意得,$\EE{X} = -0.2$.
+\;\;设$Y=X^2$,由\eqref{eq:4.5}得$\EE{X^2} = 2.8$.
+\;\;由性质123得$\EE{3X^2+5} = 3\EE{X^2} + \EE{5} = 13.4$.
+}
+\exc{P\textsubscript{85}10}{
+设$(X,Y)$的概率密度为
+\begin{equation*}
+    f(x,y) = \begin{cases}
+        12y^2, & 0\leq y\leq x\leq 1, \\
+        0,     & \mbox{otherwise}
+    \end{cases}
+\end{equation*}
+求$\EE{X},\EE{Y},\EE{XY},\EE{\left(X^2 + Y^2\right)}$.
+}
+\sol{由题意得,实际的积分区域为$x$轴,$x=1$和$y=x$围成的三角形区域$D$.\\
+(1)求$\EE{X}$,由定义可得$\EE{X} = \int_{-\infty}^{+\infty}xf_X(x)\dd{x}$,展开有
+\[\EE{X} = \iint_{\RR[2]}xf(x,y)\dd{x}\dd{y}\]
+\leftnote{$D_1 = D_2,$分开写是强调\emph{积分次序}.}
+注意到$f(x,y)$在$D_1 = \{0\leq x\leq 1, 0\leq y\leq x\}$上不为$0$,计算得$\EE{X} = \dfrac{4}{5}$.\\
+(2)同理,求$\EE{Y}$,$D_2 = \{0\leq y\leq 1, y\leq x\leq 1\}$.可得
+\[\EE{Y} = \underbrace{\int_{0}^{1}\int_{y}^{1}}_{D_2}yf(x,y)\dd{x}\dd{y} = \frac{3}{5}.\]
+(3)由于$f_X(x)f_Y(y)\neq f(x,y)$,$X,Y$不具有独立性,无法使用性质4.\\
+\leftnote{这个次序计算简单}
+由于积分次序不影响结果,因此先积$y$再积$x$可得
+\[\EE{XY} = \iint_{D_1}xyf(x,y)\dd{\sigma} = \frac{1}{2}.\]
+(4)由性质3得$\EE{\left(X^2 + Y^2\right)} = \EE{X^2} + \EE{Y^2}$.由(1)(2)可得
+\[\EE{\left(X^2 + Y^2\right)} = \iint_{D_1}x^2f(x,y)\dd{\sigma}+\iint_{D_2}y^2f(x,y)\dd{\sigma} = \frac{16}{15}.\]
+}
