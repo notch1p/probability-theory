@@ -167,7 +167,7 @@
                        {\displaystyle\frac{1}{8}\cdot\int_{2}^{4-x}(6-x-y)\dd{y} = \frac{1}{8}(6-4x+\frac{1}{2}x^2)}, & 0<x<2            \\
                        0,                                                                                             & \mbox{otherwise}
                    \end{cases}                                          \\
-               & \mbox{同理可得}                                                                                                                                                                    \\
+        \intertext{同理可得}
         f_Y(y) & = \begin{cases}
                        {\displaystyle\frac{1}{8}\cdot\int_{0}^{4-y}(6-x-y)\dd{x} = \mbox{(\dots\;略)}},\hphantom{(4x+\frac{1}{2}x^2)} & 2<y<4            \\
                        0,                                                                                                            & \mbox{otherwise}
@@ -251,6 +251,9 @@
             \Pr{X\in A, Y\in B} = \Pr{X\in A}\Pr{Y\in B}
         \end{equation}
     }
+    \thm{}{
+        如果$X,Y$相互独立,则对任意函数$g_1(x),g_2(y)$均有两者相互独立.
+    }
     \subsection{离散型随机变量的独立性}
     若$X,Y$是离散型随机变量,可以由此判断其独立性:\\
     \textbf{定义2}\quad 若对$(X,Y)$的所有可能取值$(X_i,Y_i)$有
@@ -302,55 +305,55 @@
         \label{eq:3.18}
     \end{equation}
     则称$X,Y$相互独立.
-    \mprop{}{
-        \eqref{eq:3.18}和\eqref{eq:3.15}是等价命题.
-    }
-    \pf{证明}{
-        (\textit{充分性})对\eqref{eq:3.18}两边积分有
-        \begin{align*}
-            \int_{-\infty}^{x}\int_{-\infty}^{y}f(x,y)\dd{x}\dd{y} = F(x,y)
-             & = \int_{-\infty }^{x}\int_{-\infty}^{y}f_X(x)f_Y(y)\dd{x}\dd{y}                \\
-             & = \int_{-\infty}^{x}f_X(x)\dd{x}\int_{-\infty}^{y}f_Y(y)\dd{y}   \text{(分离变量)} \\
-             & = F_X(x)F_Y(y).
-        \end{align*}
-        (\textit{必要性})对\eqref{eq:3.15}两边求两次偏导有
-        \[\pdv{F(x,y)}{x}{y} = f(x,y) = \pdv{F_X}{x}\pdv{F_Y}{y} = f_X(x)f_Y(y)\]
-    }
-    同时,我们通过上述证明,得到了重要的推论:\\
-    \cor{快速判断独立性}{
-        若$f(x,y)$是\emph{可分离变量}的,且$x,y$的取值范围独立$\;\iff\;X,Y$独立.
-    }
-    \exc{P\textsubscript{78}14}{
-        \[ f(x,y) = \begin{cases}
-                \dfrac{1}{2x^2y}, & 1\leq x \leq +\infty, \dfrac{1}{x}\leq y \leq x, \\
-                0,                & \text{otherwise}
-            \end{cases}\]
-        判断$X,Y$是否独立.
-    }
-    \sol{
-        要判断其独立性,先求两个边缘密度:\\
-        \[f_X(x) = \int_{-\infty}^{+\infty}f(x,y)\dd{y} = \begin{cases}
-                \displaystyle\int_{1/x}^{x}\dfrac{1}{2x^2y} = \dfrac{\ln{x}}{2x^2}, & 1\leq x \leq +\infty, \\
-                0,                                                                  & \text{otherwise}
-            \end{cases}\]
-        对于$Y$,在下图第一象限阴影区域内对$x$积分
-        \begin{figure}[h]
-            \centering
-            \includegraphics[scale=.15]{p78-14}
-        \end{figure}
+\mprop{}{
+    \eqref{eq:3.18}和\eqref{eq:3.15}是等价命题.
+}
+\pf{证明}{
+    (\textit{充分性})对\eqref{eq:3.18}两边积分有
+    \begin{align*}
+        \int_{-\infty}^{x}\int_{-\infty}^{y}f(x,y)\dd{x}\dd{y} = F(x,y)
+         & = \int_{-\infty }^{x}\int_{-\infty}^{y}f_X(x)f_Y(y)\dd{x}\dd{y}                \\
+         & = \int_{-\infty}^{x}f_X(x)\dd{x}\int_{-\infty}^{y}f_Y(y)\dd{y}   \text{(分离变量)} \\
+         & = F_X(x)F_Y(y).
+    \end{align*}
+    (\textit{必要性})对\eqref{eq:3.15}两边求两次偏导有
+    \[\pdv{F(x,y)}{x}{y} = f(x,y) = \pdv{F_X}{x}\cdot\pdv{F_Y}{y} = f_X(x)f_Y(y)\]
+}
+同时,我们通过上述证明,得到了重要的推论:\\
+\cor{快速判断独立性}{
+    若$f(x,y)$是\emph{可分离变量}的,且$x,y$的取值范围独立$\;\iff\;X,Y$独立.
+}
+\exc{P\textsubscript{78}14}{
+    \[ f(x,y) = \begin{cases}
+            \dfrac{1}{2x^2y}, & 1\leq x \leq +\infty, \dfrac{1}{x}\leq y \leq x, \\
+            0,                & \text{otherwise}
+        \end{cases}\]
+    判断$X,Y$是否独立.
+}
+\sol{
+    要判断其独立性,先求两个边缘密度:\\
+    \[f_X(x) = \int_{-\infty}^{+\infty}f(x,y)\dd{y} = \begin{cases}
+            \displaystyle\int_{1/x}^{x}\dfrac{1}{2x^2y} = \dfrac{\ln{x}}{2x^2}, & 1\leq x \leq +\infty, \\
+            0,                                                                  & \text{otherwise}
+        \end{cases}\]
+    对于$Y$,在下图第一象限阴影区域内对$x$积分
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=.15]{p78-14}
+    \end{figure}
 
-        设积分区域(阴影部分)为$D$,则将$D$投影到$y$轴上.\href{https://en.wikipedia.org/wiki/Multiple_integral#Normal_domains_on_R2}{(复习)}
-        \leftnote{\color{red}此处的$x$的范围并不是$[1,+\infty]$.应将$D$投影到$y$轴上来讨论$x$的范围(\textit{想累次积分定义})}
-        \[D = D_1 + D_2 = \{x\geq y, 1\leq y\} + \{x\geq 1/y , 0< y \leq 1\}\]
-        \begin{align*}
-            \ie\quad f_Y(y) & = \int_{D_1}f(x,y)\dd{x} + \int_{D_2}f(x,y)\dd{x}                                            \\
-                            & =\begin{cases}
-                                   \displaystyle\int_{1/y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 0< y\leq 1, \\
-                                   \displaystyle\int_{y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 1\leq y,      \\
-                                   \displaystyle 0, \hphantom{;;\int_{y}^{+\infty}\dfrac{1}{2x^2y}}\text{otherwise}
-                               \end{cases}
-                            & = (\cdots)
-        \end{align*}
-        \leftnote{要写出乘积.若判断独立性先枚举特值找反例.}
-        两者相乘,显然不与$f(x,y)$相等.\;\;$\tf\; XY$不独立.
-    }
+    设积分区域(阴影部分)为$D$,则将$D$投影到$y$轴上.\href{https://en.wikipedia.org/wiki/Multiple_integral#Normal_domains_on_R2}{(复习)}
+    \leftnote{\color{red}此处的$x$的范围并不是$[1,+\infty]$.应将$D$投影到$y$轴上来讨论$x$的范围(\textit{想累次积分定义})}
+    \[D = D_1 + D_2 = \{x\geq y, 1\leq y\} + \{x\geq 1/y , 0< y \leq 1\}\]
+    \begin{align*}
+        \ie\quad f_Y(y) & = \int_{D_1}f(x,y)\dd{x} + \int_{D_2}f(x,y)\dd{x}                                            \\
+                        & =\begin{cases}
+                               \displaystyle\int_{1/y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 0< y\leq 1, \\
+                               \displaystyle\int_{y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 1\leq y,      \\
+                               \displaystyle 0, \hphantom{;;\int_{y}^{+\infty}\dfrac{1}{2x^2y}}\text{otherwise}
+                           \end{cases}
+                        & = (\cdots)
+    \end{align*}
+    \leftnote{要写出乘积.若判断独立性先枚举特值找反例.}
+    两者相乘,显然不与$f(x,y)$相等.\;\;$\tf\; XY$不独立.
+}

@@ -43,7 +43,9 @@
 \newcommand{\HH}[1][]{\ensuremath{\ifstrempty{#1}{\mathbb{H}}{\mathbb{H}^{#1}}}}
 \newcommand{\FF}[1][]{\ensuremath{\ifstrempty{#1}{\mathbb{F}}{\mathbb{F}^{#1}}}}
 % expected value
-\newcommand{\EE}{\ensuremath{\mathbb{E}}}
+\newcommand{\EE}[2][]{\ensuremath{\ifstrempty{#1}{\mathbb{E}}{\mathbb{E}^#1}\left[#2\right]}}
+% variance
+\newcommand{\Var}[2][]{\ensuremath{\ifstrempty{#1}{\mathbb{V}}{\mathbb{V}^#1}\left[#2\right]}}
 \newcommand{\charin}{\text{ char }}
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\Aut}{Aut}
@@ -97,33 +99,33 @@
 %---------------------------------------
 
 %Captital Letters
-\newcommand{\bmA}{\boldsymbol{A}}	\newcommand{\bmB}{\boldsymbol{B}}
-\newcommand{\bmC}{\boldsymbol{C}}	\newcommand{\bmD}{\boldsymbol{D}}
-\newcommand{\bmE}{\boldsymbol{E}}	\newcommand{\bmF}{\boldsymbol{F}}
-\newcommand{\bmG}{\boldsymbol{G}}	\newcommand{\bmH}{\boldsymbol{H}}
-\newcommand{\bmI}{\boldsymbol{I}}	\newcommand{\bmJ}{\boldsymbol{J}}
-\newcommand{\bmK}{\boldsymbol{K}}	\newcommand{\bmL}{\boldsymbol{L}}
-\newcommand{\bmM}{\boldsymbol{M}}	\newcommand{\bmN}{\boldsymbol{N}}
-\newcommand{\bmO}{\boldsymbol{O}}	\newcommand{\bmP}{\boldsymbol{P}}
-\newcommand{\bmQ}{\boldsymbol{Q}}	\newcommand{\bmR}{\boldsymbol{R}}
-\newcommand{\bmS}{\boldsymbol{S}}	\newcommand{\bmT}{\boldsymbol{T}}
-\newcommand{\bmU}{\boldsymbol{U}}	\newcommand{\bmV}{\boldsymbol{V}}
-\newcommand{\bmW}{\boldsymbol{W}}	\newcommand{\bmX}{\boldsymbol{X}}
-\newcommand{\bmY}{\boldsymbol{Y}}	\newcommand{\bmZ}{\boldsymbol{Z}}
+\newcommand{\bmA}{\symbf{A}}	\newcommand{\bmB}{\symbf{B}}
+\newcommand{\bmC}{\symbf{C}}	\newcommand{\bmD}{\symbf{D}}
+\newcommand{\bmE}{\symbf{E}}	\newcommand{\bmF}{\symbf{F}}
+\newcommand{\bmG}{\symbf{G}}	\newcommand{\bmH}{\symbf{H}}
+\newcommand{\bmI}{\symbf{I}}	\newcommand{\bmJ}{\symbf{J}}
+\newcommand{\bmK}{\symbf{K}}	\newcommand{\bmL}{\symbf{L}}
+\newcommand{\bmM}{\symbf{M}}	\newcommand{\bmN}{\symbf{N}}
+\newcommand{\bmO}{\symbf{O}}	\newcommand{\bmP}{\symbf{P}}
+\newcommand{\bmQ}{\symbf{Q}}	\newcommand{\bmR}{\symbf{R}}
+\newcommand{\bmS}{\symbf{S}}	\newcommand{\bmT}{\symbf{T}}
+\newcommand{\bmU}{\symbf{U}}	\newcommand{\bmV}{\symbf{V}}
+\newcommand{\bmW}{\symbf{W}}	\newcommand{\bmX}{\symbf{X}}
+\newcommand{\bmY}{\symbf{Y}}	\newcommand{\bmZ}{\symbf{Z}}
 %Small Letters
-\newcommand{\bma}{\boldsymbol{a}}	\newcommand{\bmb}{\boldsymbol{b}}
-\newcommand{\bmc}{\boldsymbol{c}}	\newcommand{\bmd}{\boldsymbol{d}}
-\newcommand{\bme}{\boldsymbol{e}}	\newcommand{\bmf}{\boldsymbol{f}}
-\newcommand{\bmg}{\boldsymbol{g}}	\newcommand{\bmh}{\boldsymbol{h}}
-\newcommand{\bmi}{\boldsymbol{i}}	\newcommand{\bmj}{\boldsymbol{j}}
-\newcommand{\bmk}{\boldsymbol{k}}	\newcommand{\bml}{\boldsymbol{l}}
-\newcommand{\bmm}{\boldsymbol{m}}	\newcommand{\bmn}{\boldsymbol{n}}
-\newcommand{\bmo}{\boldsymbol{o}}	\newcommand{\bmp}{\boldsymbol{p}}
-\newcommand{\bmq}{\boldsymbol{q}}	\newcommand{\bmr}{\boldsymbol{r}}
-\newcommand{\bms}{\boldsymbol{s}}	\newcommand{\bmt}{\boldsymbol{t}}
-\newcommand{\bmu}{\boldsymbol{u}}	\newcommand{\bmv}{\boldsymbol{v}}
-\newcommand{\bmw}{\boldsymbol{w}}	\newcommand{\bmx}{\boldsymbol{x}}
-\newcommand{\bmy}{\boldsymbol{y}}	\newcommand{\bmz}{\boldsymbol{z}}
+\newcommand{\bma}{\symbf{a}}	\newcommand{\bmb}{\symbf{b}}
+\newcommand{\bmc}{\symbf{c}}	\newcommand{\bmd}{\symbf{d}}
+\newcommand{\bme}{\symbf{e}}	\newcommand{\bmf}{\symbf{f}}
+\newcommand{\bmg}{\symbf{g}}	\newcommand{\bmh}{\symbf{h}}
+\newcommand{\bmi}{\symbf{i}}	\newcommand{\bmj}{\symbf{j}}
+\newcommand{\bmk}{\symbf{k}}	\newcommand{\bml}{\symbf{l}}
+\newcommand{\bmm}{\symbf{m}}	\newcommand{\bmn}{\symbf{n}}
+\newcommand{\bmo}{\symbf{o}}	\newcommand{\bmp}{\symbf{p}}
+\newcommand{\bmq}{\symbf{q}}	\newcommand{\bmr}{\symbf{r}}
+\newcommand{\bms}{\symbf{s}}	\newcommand{\bmt}{\symbf{t}}
+\newcommand{\bmu}{\symbf{u}}	\newcommand{\bmv}{\symbf{v}}
+\newcommand{\bmw}{\symbf{w}}	\newcommand{\bmx}{\symbf{x}}
+\newcommand{\bmy}{\symbf{y}}	\newcommand{\bmz}{\symbf{z}}
 
 %---------------------------------------
 % Scr Math Fonts :-

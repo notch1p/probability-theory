@@ -165,11 +165,11 @@ $F(x)$是一个\vocab{阶梯型函数},在点$x_i$处的跃度为$\Pr(X=x)$.
 \sol{
     \textit{转化为求累次积分}
     \begin{align}
-        \text{要求原式,不妨先求其平方,亦即}                                                                                                                                            \nonumber     \\
+        \intertext{要求原式,不妨先求其平方,亦即}                                                                                                                                            
         \left(\int_{-\infty}^{+\infty}e^{-t^2}\dd{t}\right)^2 & = \int_{-\infty}^{+\infty}e^{-x^2}\dd{x}\int_{-\infty}^{+\infty}e^{-y^2}\dd{y} \nonumber                                \\
-        \text{化为累次积分有}                                                                                                                                                    \nonumber     \\
+        \intertext{化为累次积分有}                                                                                                                                                    
                                                               & = \iint_{\RR[2]}e^{-(x^2+y^2)}\dd{x}\dd{y}.  \nonumber                                                                  \\
-        \text{$\RR[2]$即$xOy$面,化为极坐标有}                                                                                                                                         \nonumber \\
+        \intertext{$\RR[2]$即$xOy$面,化为极坐标有}                                                                                                                                         
         \iint_{\RR[2]}e^{-\rho^2}\rho\dd{\rho}\dd{\theta}     & = \int_{0}^{2\pi}\dd{\theta}\int_{0}^{+\infty}e^{-\rho^2}\rho\dd{\rho}       \nonumber                                  \\
                                                               & = \pi                                                                         \nonumber                                 \\
         \tf \int_{-\infty}^{+\infty}e^{-t^2}\dd{t}            & = \sqrt{\pi}.

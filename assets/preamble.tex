@@ -10,6 +10,7 @@
 \usepackage{metalogo}
 \usepackage{marginnote}
 \usepackage{wrapfig}
+\usepackage[normalem]{ulem}
 \setCJKmainfont[ItalicFont=LXGW WenKai Mono GB, BoldFont=Hiragino Sans GB W6]{BabelStone Han}
 \setCJKmonofont{Sarasa Fixed Slab SC}
 \setCJKsansfont{Hiragino Sans GB}
@@ -60,7 +61,7 @@
 \setsansfont{Lucida Grande}
 \usepackage{unicode-math}
 \setmonofont{Victor Mono}
-\setmathfont{XCharter-Math.otf}[math-style=ISO,Scale=1.1,BoldFont=XCharter-Math-Bold.otf, CharacterVariant={3,6,10}, StylisticSet=4]
+\setmathfont{XCharter-Math.otf}[math-style=ISO,Scale=1.1,BoldFont=XCharter-Math-Bold.otf, CharacterVariant={3,6,10}, StylisticSet=4,math-style=ISO,bold-style=ISO]
 \setmathrm{XCharter}[Scale=1.1]
 \setmathfont{Libertinus Math}[range="1D4B6-"1D4CF, Scale=MatchLowercase]
 \newfontfamily\displayfont{Playfair Display}
@@ -712,11 +713,11 @@
         }%
     }%
 }
-\providecommand*{\pdv}[3][]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
+% \providecommand*{\pdv}[3][]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
 %  - others
 \DeclareMathOperator{\Lap}{\mathcal{L}}
-\DeclareMathOperator{\Var}{Var} % varience
-\DeclareMathOperator{\Cov}{Cov} % covarience
+% \DeclareMathOperator{\Var}{Var} % variance
+\DeclareMathOperator{\Cov}{Cov} % covariance
 \DeclareMathOperator{\E}{E} % expected
 
 % Since the amsthm package isn't loaded
