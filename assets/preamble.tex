@@ -11,12 +11,12 @@
 \usepackage{marginnote}
 \usepackage{wrapfig}
 \usepackage[normalem]{ulem}
-\setCJKmainfont[ItalicFont=LXGW WenKai Mono GB, BoldFont=Hiragino Sans GB W6]{BabelStone Han}
+\setCJKmainfont[ItalicFont=TH-Khaai-TP0, BoldFont=Hiragino Sans GB W6]{TH-Tshyn-P0}
 \setCJKmonofont{Sarasa Fixed Slab SC}
 \setCJKsansfont{Hiragino Sans GB}
-\setCJKmathfont{BabelStone Han}
+\setCJKmathfont{TH-Tshyn-P0}
 \setCJKfamilyfont{jarm}{IPAmjMincho}[BoldFont=Hiragino Sans W6, ItalicFont=YuKyokasho]
-\setCJKfamilyfont{hant}{I.Ming}[BoldFont=Hiragino Sans CNS W6, ItalicFont=LXGW WenKai Mono TC]
+\setCJKfamilyfont{hant}{I.Ming}[BoldFont=Hiragino Sans CNS W6, ItalicFont=TH-Khaai-PP0]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[a4paper,tmargin=2cm,rmargin=1in,lmargin=1in,bmargin=2cm,footskip=.2in]{geometry}
 \usepackage{amsmath,amsfonts,amsthm,amssymb,mathtools}
@@ -646,7 +646,7 @@
 }
 \newcommand{\getCurrentSectionNumber}{\getcurrentref{section}}
 \newenvironment{myproof}[1][\proofname]{%
-    \proof[\bfseries #1: ]%
+    \proof[\textsf{\bfseries#1:} ]%
 }{\endproof}
 
 \newcommand{\mclm}[2]{\begin{myclaim}[#1]#2\end{myclaim}}
@@ -693,26 +693,26 @@
     \hskip\wd\diffdbox
     \endgroup
 }
-\newcommand{\ddd}[1][]{\ensuremath{\mathop{}\!\ifstrempty{#1}{%
-            \slantedromand\@ifnextchar^{\hspace{0.2ex}}{\hspace{0.1ex}}}%
-        {\slantedromand\hspace{0.2ex}^{#1}}}}
-\ProvideDocumentCommand\dv{o m g}{%
-    \ensuremath{%
-        \IfValueTF{#3}{%
-            \IfNoValueTF{#1}{%
-                \frac{\ddd #2}{\ddd #3}%
-            }{%
-                \frac{\ddd^{#1} #2}{\ddd #3^{#1}}%
-            }%
-        }{%
-            \IfNoValueTF{#1}{%
-                \frac{\ddd}{\ddd #2}%
-            }{%
-                \frac{\ddd^{#1}}{\ddd #2^{#1}}%
-            }%
-        }%
-    }%
-}
+% \newcommand{\ddd}[1][]{\ensuremath{\mathop{}\!\ifstrempty{#1}{%
+%             \slantedromand\@ifnextchar^{\hspace{0.2ex}}{\hspace{0.1ex}}}%
+%         {\slantedromand\hspace{0.2ex}^{#1}}}}
+% \ProvideDocumentCommand\dv{o m g}{%
+%     \ensuremath{%
+%         \IfValueTF{#3}{%
+%             \IfNoValueTF{#1}{%
+%                 \frac{\ddd #2}{\ddd #3}%
+%             }{%
+%                 \frac{\ddd^{#1} #2}{\ddd #3^{#1}}%
+%             }%
+%         }{%
+%             \IfNoValueTF{#1}{%
+%                 \frac{\ddd}{\ddd #2}%
+%             }{%
+%                 \frac{\ddd^{#1}}{\ddd #2^{#1}}%
+%             }%
+%         }%
+%     }%
+% }
 % \providecommand*{\pdv}[3][]{\frac{\partial^{#1}#2}{\partial#3^{#1}}}
 %  - others
 \DeclareMathOperator{\Lap}{\mathcal{L}}
@@ -819,11 +819,11 @@
 \makeatletter
 \DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
 \def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
-
+\def\st{\emph{s.t}\onedot} \def\St{\emph{S.t}\onedot}
 \def\eg{\emph{e.g}\onedot} \def\Eg{\emph{E.g}\onedot}
 \def\ie{\emph{i.e}\onedot} \def\Ie{\emph{I.e}\onedot}
 \def\cf{\emph{c.f}\onedot} \def\Cf{\emph{C.f}\onedot}
 \def\etc{\emph{etc}\onedot} \def\vs{\emph{vs}\onedot}
-\def\wrt{w.r.t\onedot} \def\dof{d.o.f\onedot}
+\def\wrt{\emph{w.r.t}\onedot} \def\dof{\emph{d.o.f}\onedot}
 \def\etal{\emph{et al}\onedot}
 \makeatother

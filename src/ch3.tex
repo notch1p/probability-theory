@@ -2,188 +2,188 @@
 \section{二维随机变量及其分布}
 \subsection{二维随机变量}
 \dfn{二维随机变量}{
-    设随机试验的样本空间为$S$,定义在$S$上的实值单值函数$X = X(\omega)\;Y=Y(\omega)$为两个随机变量.称向量$(X,Y )$为定义在$S$上的\vocab{二维随机变量}
+    设随机试验的样本空间为$S$, 定义在$S$上的实值单值函数$X = X(\omega)\;Y=Y(\omega)$为两个随机变量. 称向量$(X, Y )$为定义在$S$上的\vocab{二维随机变量}
     \begin{center}
         \ie    $\begin{aligned}
-                X:S     & \to\RR                                              \\
-                Y:S     & \to\RR                                              \\
-                (X,Y):S & \to\RR[2]\;\ie\;\omega\mapsto (X(\omega),Y(\omega))
+                X:S      & \to\RR                                               \\
+                Y:S      & \to\RR                                               \\
+                (X, Y):S & \to\RR[2]\;\ie\;\omega\mapsto (X(\omega), Y(\omega))
             \end{aligned}$
     \end{center}
 }
-类似地,我们可以得到$n$维随机变量的定义.
+类似地, 我们可以得到$n$维随机变量的定义.
 \subsection{二维随机变量的分布函数}
 \dfn{二维随机变量的分布函数}{
-    设$(X,Y)$是二维随机变量,对于任意实数$x,y$,定义二元函数
+    设$(X, Y)$是二维随机变量, 对于任意实数$x, y$, 定义二元函数
     \begin{equation}
-        F(x,y) = \Pr{X\leq x\cap Y\leq y} \defeq \Pr{X\leq x, Y\leq y}
+        F(x, y) = \Pr{X\leq x\cap Y\leq y} \defeq \Pr{X\leq x, Y\leq y}
     \end{equation}
-    称为二维随机变量$(X,Y)$的\vocab{分布函数},或\vocab{联合分布函数(Joint CDF)}.
+    称为二维随机变量$(X, Y)$的\vocab{分布函数}, 或\vocab{联合分布函数 (Joint CDF)}.
 }
 \begin{figure}[h]
     \centering
     \includegraphics[scale=.8]{jointCDF}
     \caption{CDF}
 \end{figure}
-将这个向量视作平面内随机点的坐标,分布函数就是随机点$(X,Y)$落入矩形域的概率.通过容斥原理计算得到
+将这个向量视作平面内随机点的坐标, 分布函数就是随机点$(X, Y)$落入矩形域的概率.通过容斥原理计算得到
 \begin{equation}
-    \Pr{x_1\leq X \leq x_2, y_1\leq Y\leq y_2} = F(x_2,y_2) - F(x_1,y_2) - F(x_2,y_1) + F(x_1,y_1)
+    \Pr{x_1\leq X \leq x_2, y_1\leq Y\leq y_2} = F(x_2, y_2) - F(x_1, y_2) - F(x_2, y_1) + F(x_1, y_1)
 \end{equation}
 \newpage
 \subsubsection{联合CDF的性质}
 \leftnote[1cm]{右侧几个等式可通过矩形域的面积来理解.}
 \begin{enumerate}
-    \item $0\leq F(x,y )\leq 1$
+    \item $0\leq F(x, y )\leq 1$
           \begin{enumerate}
-              \item 固定$y$,$F(-\infty,y ) = 0$;
-              \item 固定$x$,$F(x,-\infty) = 0$;
-              \item $\lim_{\substack{x\to +\infty\\y\to +\infty}}F(x,y ) = 1, \lim_{\substack{x\to -\infty\\y\to -\infty}}F(x,y) = 0$
+              \item 固定$y$, $F(-\infty, y ) = 0$;
+              \item 固定$x$, $F(x, -\infty) = 0$;
+              \item $\lim_{\substack{x\to +\infty\\y\to +\infty}}F(x, y ) = 1, \lim_{\substack{x\to -\infty\\y\to -\infty}}F(x, y) = 0$
           \end{enumerate}
-    \item (\emph{单调性})$F(x,y )$关于$x$和$y$都是单调不减的.
+    \item (\emph{单调性})$F(x, y )$关于$x$和$y$都是单调不减的.
           \begin{enumerate}
-              \item 固定$y$,$F(x,y )$关于$x$单调不减;
-              \item 固定$x$,$F(x,y )$关于$y$单调不减.
+              \item 固定$y$, $F(x, y )$关于$x$单调不减;
+              \item 固定$x$, $F(x, y )$关于$y$单调不减.
           \end{enumerate}
-    \item (\emph{连续性})$F(x,y )$关于$x$和$y$都是右连续的.
+    \item (\emph{连续性})$F(x, y )$关于$x$和$y$都是右连续的.
 \end{enumerate}
-若已知$(X,Y)$的分布函数$F(X,Y)$,则可由之导出各个参数(在固定另一个参数的情况下)各自的分布函数:
+若已知$(X, Y)$的分布函数$F(X, Y)$, 则可由之导出各个参数 (在固定另一个参数的情况下)各自的分布函数:
 \begin{align}
-    F_X(X) & = \Pr{X\leq x } =\Pr{X\leq x} = \lim_{y\to +\infty}F(x,y), \\
-    F_Y(y) & = \Pr{Y\leq y } =\Pr{Y\leq y} = \lim_{x\to +\infty}F(x,y),
+    F_X(X) & = \Pr{X\leq x } =\Pr{X\leq x} = \lim_{y\to +\infty}F(x, y), \\
+    F_Y(y) & = \Pr{Y\leq y } =\Pr{Y\leq y} = \lim_{x\to +\infty}F(x, y),
 \end{align}
 如此导出的CDF称为\vocab{边缘分布函数}.
 \subsection{二维离散型随机变量及其分布律}
 \dfn{联合概率分布律}{
-    设$(X,Y)$是二维离散型随机变量,若存在非负函数$p_{ij}$,使得
+    设$(X, Y)$是二维离散型随机变量, 若存在非负函数$p_{ij}$, 使得
     \begin{equation}
-        \Pr{X=x_i,Y=y_j} = p_{ij},\quad i,j=1,2,\cdots
+        \Pr{X=x_i, Y=y_j} = p_{ij}, \quad i, j=1, 2, \ldots
     \end{equation}
-    则称$(X,Y)$为二维离散型随机变量,并称$p_{ij}$为$(X,Y)$的\vocab{联合概率分布律}.
+    则称$(X, Y)$为二维离散型随机变量, 并称$p_{ij}$为$(X, Y)$的\vocab{联合概率分布律}.
 }
-显然,$p_{ij}$满足性质:\;\;
+显然, $p_{ij}$满足性质:\;\;
 \begin{enumerate*}
     \item $p_{ij}\geq 0$;
           \quad\item $\sum_i\sum_j p_{ij} = 1$.
 \end{enumerate*}
-利用其分布律,易见$(X,Y )$在$D$上的概率为
+利用其分布律, 易见$(X, Y )$在$D$上的概率为
 \begin{equation}
-    \Pr{(X,Y)\in D} = \sum_{(x_i,y_j)\in D}p_{ij}
+    \Pr{(X, Y)\in D} = \sum_{(x_i, y_j)\in D}p_{ij}
 \end{equation}
 而其联合CDF为
 \begin{equation}
-    F(x,y) = \Pr{X\leq x, Y\leq y } = \sum_{x_i\leq x,\,y_j\leq y}p_{ij}
+    F(x, y) = \Pr{X\leq x, Y\leq y } = \sum_{x_i\leq x, \, y_j\leq y}p_{ij}
 \end{equation}
 \subsubsection{边缘分布律}
-通过联合概率分布,我们可以得到$X,Y$各自的概率分布:
-\leftnote[.5cm]{即行和,列和}
+通过联合概率分布, 我们可以得到$X, Y$各自的概率分布:
+\leftnote[.5cm]{即行和, 列和}
 \begin{align}
     p_{i\cdot}  & = \Pr{X=x_i} = \sum_j p_{ij} \\
     p_{\cdot j} & = \Pr{Y=y_j} = \sum_i p_{ij}
 \end{align}
-这称为$(X,Y)$的\vocab{边缘分布}.
-\qs{例1}{设随机整数变量$X=1,2,3,4$,$Y=1\cdots X$等可能地取值,试求$(X,Y)$的分布律.}
+这称为$(X, Y)$的\vocab{边缘分布}.
+\qs{例1}{设随机整数变量$X=1, 2, 3, 4$, $Y=1\cdots X$等可能地取值, 试求$(X, Y)$的分布律.}
 \sol{
     \begin{align*}
-        \mbox{由题意可得}\Pr{X=i,Y=j} & = \Pr{Y=j|X=i}\Pr{X=i}\eqref{eq:mul}                   \\
-                                 & = \frac{1}{i }\cdot\frac{1 }{4 }, i =1,2,3,4, j\leq i.
+        \mbox{由题意可得}\Pr{X=i, Y=j} & = \Pr{Y=j|X=i}\Pr{X=i}\eqref{eq:mul}                      \\
+                                  & = \frac{1}{i }\cdot\frac{1 }{4 }, i =1, 2, 3, 4, j\leq i.
     \end{align*}
     \begin{center}
         \begin{tabular}{@{}ccccc@{}}
             \toprule
-            $X,Y$ & $1$    & $2$    & $3$    & $4$    \\ \midrule
-            $1$   & $1/4$  & $0$    & $0$    & $0$    \\ \midrule
-            $2$   & $1/8$  & $1/8$  & $0$    & $0$    \\ \midrule
-            $3$   & $1/12$ & $1/12$ & $1/12$ & $0$    \\ \midrule
-            $4$   & $1/16$ & $1/16$ & $1/16$ & $1/16$ \\ \bottomrule
+            $X, Y$ & $1$    & $2$    & $3$    & $4$    \\ \midrule
+            $1$    & $1/4$  & $0$    & $0$    & $0$    \\ \midrule
+            $2$    & $1/8$  & $1/8$  & $0$    & $0$    \\ \midrule
+            $3$    & $1/12$ & $1/12$ & $1/12$ & $0$    \\ \midrule
+            $4$    & $1/16$ & $1/16$ & $1/16$ & $1/16$ \\ \bottomrule
         \end{tabular}
     \end{center}
 }
 \subsection{二维连续型随机变量及其概率密度}
 \dfn{二维连续型随机变量}{
-    设$(X,Y)$是二维随机变量,$F(X,Y)$为其分布函数,若存在非负可积函数$f(x,y)$ s.t.
+    设$(X, Y)$是二维随机变量, $F(X, Y)$为其分布函数, 若存在非负可积函数$f(x, y)$ s.t.
     \begin{equation*}
-        F(x,y) = \int_{-\infty}^x\int_{-\infty}^y f(u,v)\dd{u}\dd{v}
+        F(x, y) = \int_{-\infty}^x\int_{-\infty}^y f(u, v)\dd{u}\dd{v}
     \end{equation*}
-    则称$(X,Y)$为\vocab{二维连续型随机变量},称$f(x,y)$为其\vocab{概率密度}
+    则称$(X, Y)$为\vocab{二维连续型随机变量}, 称$f(x, y)$为其\vocab{概率密度}
 }
-显然,$f(x,y)$满足性质:\;\;
+显然, $f(x, y)$满足性质:\;\;
 \begin{enumerate*}[label=\bfseries\protect\circled{\arabic*}]
-    \item $f(x,y)\geq 0$;\quad
-    \item $\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)\dd{x}\dd{y} =F(+\infty,+\infty)=1$.
+    \item $f(x, y)\geq 0$;\quad
+    \item $\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x, y)\dd{x}\dd{y} =F(+\infty, +\infty)=1$.
 \end{enumerate*}
 
-\textbf{重要性质}\quad 设$D$是$xOy$平面上的区域,$(X,Y )$落入其中的概率为
+\textbf{重要性质}\quad 设$D$是$xOy$平面上的区域, $(X, Y )$落入其中的概率为
 \begin{equation}
-    \Pr{(X,Y)\in D} = \iint_D f(x,y)\dd{x}\dd{y}
+    \Pr{(X, Y)\in D} = \iint_D f(x, y)\dd{x}\dd{y}
 \end{equation}
-若$f(x,y)$在$(x,y )$处连续,则有
+若$f(x, y)$在$(x, y )$处连续, 则有
 \begin{equation}
-    \pdv{F(x,y)}{x}{y} = f(x,y).
+    \pdv{F(x, y)}{x}{y} = f(x, y).
 \end{equation}
 \subsubsection{边缘概率密度}\label{sec:marginPDF}
-我们知道此处的$X$和$Y$都是都是连续型随机变量,可得它们的\vocab{边缘密度}为
+我们知道此处的$X$和$Y$都是都是连续型随机变量, 可得它们的\vocab{边缘密度}为
 \begin{align}
-    f_X(x)=\int_{-\infty}^{+\infty}f(x,y )\dd{y}; &  & f_Y(y)=\int_{-\infty}^{+\infty}f(x,y )\dd{x};
+    f_X(x)=\int_{-\infty}^{+\infty}f(x, y )\dd{y}; &  & f_Y(y)=\int_{-\infty}^{+\infty}f(x, y )\dd{x};
     \label{eq:3.12}
 \end{align}
-结合之前的性质,我们可以知道对$F(x,y)$求一个变量的偏导可以得到另一个变量的边缘密度.
-\leftnote[2cm]{通常都是分段函数,且一段为$0$\\(\emph{不然很难算})}
-\exc{习题3-1-6改}{
-    设随机变量$(X,Y )$的概率密度为
+结合之前的性质, 我们可以知道对$F(x, y)$求一个变量的偏导可以得到另一个变量的边缘密度.
+\leftnote[2cm]{通常都是分段函数, 且一段为$0$\\(\emph{不然很难算})}
+\exc{习题3--1--6改}{
+    设随机变量$(X, Y )$的概率密度为
     \begin{align*}
-        f(x,y) = \begin{cases}
-                     k(6-x-y), & 0<x<2, 2<y<4     \\
-                     0,        & \mbox{otherwise}
-                 \end{cases}
+        f(x, y) = \begin{cases}
+                      k(6-x-y), & 0<x<2, 2<y<4     \\
+                      0,        & \mbox{otherwise}
+                  \end{cases}
     \end{align*}
     求\begin{enumerate*}[label=\bfseries\protect\circled{\arabic*}]
         \item 常数$k$;\;\;
         \item $\Pr{X+Y \leq 4}$;\;\;
-        \item $X,Y$的边缘密度.
+        \item $X, Y$的边缘密度.
     \end{enumerate*}
 }
 \sol{
 (1)因为
 
 \begin{align*}
-    \iint_{\RR[2]}f(x,y)\dd{x}\dd{y} =\begin{cases}
-                                          \iint_Dk(6-x-y)\dd{x}\dd{y}, & x\in D=\{(x,y)|x\in (0,2) y\in (2,4)\} \\
-                                          0,                           & \mbox{otherwise}
-                                      \end{cases} =1
+    \iint_{\RR[2]}f(x, y)\dd{x}\dd{y} =\begin{cases}
+                                           \iint_Dk(6-x-y)\dd{x}\dd{y}, & x\in D=\{(x, y)|x\in (0, 2) y\in (2, 4)\} \\
+                                           0,                           & \mbox{otherwise}
+                                       \end{cases} =1
 \end{align*}
-\[\ie \iint_Dk(6-x-y )\dd{x}\dd{y} = \int_{0}^{2}\int_{2}^{4}k(6-x-y )\dd{x}\dd{y} = 1,\mbox{计算得}k = \frac{1}{8}.\]
+\[\ie \iint_Dk(6-x-y )\dd{x}\dd{y} = \int_{0}^{2}\int_{2}^{4}k(6-x-y )\dd{x}\dd{y} = 1, \mbox{计算得}k = \frac{1}{8}.\]
 \newpage
-\noindent (2)由题意,所有符合的$(X,Y)$至少落在直线$x + y = 4$的左侧.由(1)知点只可能落入$D$中,故令\\$G = D\cap \{x+y\leq 4\}$,即下图{\color[HTML]{8e3a16}\emph{棕色区域}}
+\noindent (2)由题意, 所有符合的$(X, Y)$至少落在直线$x + y = 4$的左侧. 由 (1)知点只可能落入$D$中, 故令\\$G = D\cap \{x+y\leq 4\}$, 即下图{\color[HTML]{8e3a16}\emph{棕色区域}}
     \leftnote[1.8cm]{w/ Geogebra}
     \begin{center}
         \input{assets/3_1_1.tex}
     \end{center}
-    那么,我们有
+    那么, 我们有
     \[k\cdot\iint_G6-x-y \dd{x}\dd{y} = \Pr{X+Y\leq 4}= \frac{2}{3}\;\;\mbox{即为所求}.\]
-    \leftnote[2cm]{相当于固定一个变量,对另一个变量积分}
-    (3)根据\ref{sec:marginPDF},可以得到
+    \leftnote[2cm]{相当于固定一个变量, 对另一个变量积分}
+    (3)根据\ref{sec:marginPDF}, 可以得到
     \begin{align*}
         f_X(x) & = \begin{cases}
                        {\displaystyle\frac{1}{8}\cdot\int_{2}^{4-x}(6-x-y)\dd{y} = \frac{1}{8}(6-4x+\frac{1}{2}x^2)}, & 0<x<2            \\
                        0,                                                                                             & \mbox{otherwise}
-                   \end{cases}                                          \\
+                   \end{cases}                                           \\
         \intertext{同理可得}
         f_Y(y) & = \begin{cases}
-                       {\displaystyle\frac{1}{8}\cdot\int_{0}^{4-y}(6-x-y)\dd{x} = \mbox{(\dots\;略)}},\hphantom{(4x+\frac{1}{2}x^2)} & 2<y<4            \\
-                       0,                                                                                                            & \mbox{otherwise}
+                       {\displaystyle\frac{1}{8}\cdot\int_{0}^{4-y}(6-x-y)\dd{x} = \mbox{(\dots\;略)}}, \hphantom{(4x+\frac{1}{2}x^2)} & 2<y<4            \\
+                       0,                                                                                                             & \mbox{otherwise}
                    \end{cases}
     \end{align*}
     }
     \subsection{二维均匀分布}
     \dfn{二维均匀分布}{
-        设$G$是平面上的有界区域,其面积为$A$,若二维随机变量$(X,Y )$具有概率密度函数
+        设$G$是平面上的有界区域, 其面积为$A$, 若二维随机变量$ (X, Y )$具有概率密度函数
         \begin{align}
-            f(x,y)=\begin{cases}
-                       \frac{1}{A}, & (x,y)\in G       \\
-                       0,           & \mbox{otherwise}
-                   \end{cases}
+            f(x, y)=\begin{cases}
+                        \frac{1}{A}, & (x, y)\in G      \\
+                        0,           & \mbox{otherwise}
+                    \end{cases}
         \end{align}
-        则称$(X,Y )$在$G$上服从\vocab{二维均匀分布}.
+        则称$ (X, Y )$在$G$上服从\vocab{二维均匀分布}.
     }
     \begin{wrapfigure}[4]{r}{95pt}
         \begin{center}
@@ -191,12 +191,12 @@
         \end{center}
         \caption{均匀分布}
     \end{wrapfigure}
-    若$(X,Y)$在$G$上服从均匀分布,则其概率密度函数反映在几何上为定义在$xOy$平面内区域$G$上的空间的一块平面.
-    考虑向平面$G$上投掷一质点,若点落在区域$B\subseteq G$内的概率与$B$的面积成正比且与$B$的位置无关,则称$G$为均匀分布的区域,
-    坐标$(X,Y)$在$G$上服从均匀分布.
-    \leftnote[2.5cm]{\color{red}对于\textbf{矩形域}$G$该公式成立,其他形状则不一定.}
+    若$ (X, Y)$在$G$上服从均匀分布, 则其概率密度函数反映在几何上为定义在$xOy$平面内区域$G$上的空间的一块平面.
+    考虑向平面$G$上投掷一质点, 若点落在区域$B\subseteq G$内的概率与$B$的面积成正比且与$B$的位置无关, 则称$G$为均匀分布的区域,
+    坐标$ (X, Y)$在$G$上服从均匀分布.
+    \leftnote[2.5cm]{\color{red}对于\textbf{矩形域}$G$该公式成立, 其他形状则不一定.}
     \cor{}{
-        均匀分布$(X,Y)$的两个边缘分布仍为均匀分布且分别为
+        均匀分布$ (X, Y)$的两个边缘分布仍为均匀分布且分别为
         \begin{align}
             \begin{split}
                 f_X(x) & = \begin{cases}
@@ -212,18 +212,18 @@
     }
 
     \qs{例5}{
-        设$(X,Y)$服从\emph{单位圆域}上的均匀分布,求对应的两个边缘分布.
+        设$ (X, Y)$服从\emph{单位圆域}上的均匀分布, 求对应的两个边缘分布.
     }
     \newpage
     \sol{
-        由题意得,其PDF为
+        由题意得, 其PDF为
         \begin{align*}
-            f(x,y) & = \begin{cases}
-                           \frac{1}{\pi}, & x^2+y^2\leq 1    \\
-                           0,             & \mbox{otherwise}
-                       \end{cases}
+            f(x, y) & = \begin{cases}
+                            \frac{1}{\pi}, & x^2+y^2\leq 1    \\
+                            0,             & \mbox{otherwise}
+                        \end{cases}
         \end{align*}
-        根据\eqref{eq:3.12},只需考虑点在圆域内的情况,易得
+        根据\eqref{eq:3.12}, 只需考虑点在圆域内的情况, 易得
         \begin{align*}
             f_X(x)     & = \frac{1}{\pi}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\dd{y} = \frac{2}{\pi}\sqrt{1-x^2}. \\
             \tf f_X(x) & = \begin{cases}
@@ -231,43 +231,43 @@
                                0,                         & \mbox{otherwise}
                            \end{cases}
         \end{align*}
-        因为$x^2 + y^2 \leq 1$是\emph{轮换式},将$x$换成$y$即可得到$f_Y(y)$.
+        因为$x^2 + y^2 \leq 1$是\emph{轮换式}, 将$x$换成$y$即可得到$f_Y(y)$.
     }
     \section{随机变量的独立性}
     \dfn{独立性}{
-        设$(X,Y)$是二维随机变量,若对于任意$x,y$,
+        设$ (X, Y)$是二维随机变量, 若对于任意$x, y$,
         \begin{align}
             \begin{split}
                 \Pr{X\leq x, Y\leq y} & = \Pr{X\leq x}\Pr{Y\leq y} \\
-                \ie\;F(x,y)           & = F_X(x)F_Y(y) \text{充要条件}
+                \ie\;F(x, y)          & = F_X(x)F_Y(y) \text{充要条件}
                 \label{eq:3.15}
             \end{split}
         \end{align}
         则称$X$和$Y$是\vocab{相互独立}的.
     }
     \thm{}{
-        随机变量$X,Y$相互独立的充要条件是对$X$和$Y$所生成的任何事件相互独立,即
+        随机变量$X, Y$相互独立的充要条件是对$X$和$Y$所生成的任何事件相互独立, 即
         \begin{equation}
             \Pr{X\in A, Y\in B} = \Pr{X\in A}\Pr{Y\in B}
         \end{equation}
     }
     \thm{}{
-        如果$X,Y$相互独立,则对任意函数$g_1(x),g_2(y)$均有两者相互独立.
+        如果$X, Y$相互独立, 则对任意函数$g_1(x), g_2(y)$均有两者相互独立.
     }
     \subsection{离散型随机变量的独立性}
-    若$X,Y$是离散型随机变量,可以由此判断其独立性:\\
-    \textbf{定义2}\quad 若对$(X,Y)$的所有可能取值$(X_i,Y_i)$有
+    若$X, Y$是离散型随机变量, 可以由此判断其独立性:\\
+    \textbf{定义2}\quad 若对$ (X, Y)$的所有可能取值$ (X_i, Y_i)$有
     \begin{align}
-        \Pr{X=X_i,Y=Y_j} & = \Pr{X=X_i}\Pr{Y=Y_j},\nonumber \\
-        \ie\;p_{ij}      & = p_{i\cdot}p_{\cdot j}
+        \Pr{X=X_i, Y=Y_j} & = \Pr{X=X_i}\Pr{Y=Y_j}, \nonumber \\
+        \ie\;p_{ij}       & = p_{i\cdot}p_{\cdot j}
     \end{align}
-    则称$X,Y$相互独立.
+    则称$X, Y$相互独立.
     \exc{P\textsubscript{77}11}{
-        设$X,Y$相互独立,完成下面的联合分布:
+        设$X, Y$相互独立, 完成下面的联合分布:
         \begin{center}
             \begin{tabular}{@{}ccccc@{}}
                 \toprule
-                $Y,X$         & $x_1$ & $x_2$ & $x_3$ & $p_{i\cdot}$ \\ \midrule
+                $Y, X$        & $x_1$ & $x_2$ & $x_3$ & $p_{i\cdot}$ \\ \midrule
                 $y_1$         & $a$   & $1/9$ & $c$   &              \\ \midrule
                 $y_2$         & $1/9$ & $b$   & $1/3$ &              \\ \midrule
                 $p_{\cdot j}$ &       &       &       & $1$          \\ \bottomrule
@@ -275,22 +275,22 @@
         \end{center}
     }
     \sol{
-    首先求$a,b,c$:\\
+    首先求$a, b, c$:\\
     \begin{align*}
         \bc p_{21} & = \frac{1}{9} = p_{2\cdot}p_{\cdot 1} \\
         p_{23}     & = \frac{1}{3} = p_{2\cdot}p_{\cdot 3}
     \end{align*}
-    联立上两式可得$c = 3a$.又
+    联立上两式可得$c = 3a$. 又
     \[\sum_i\sum_j p_{ij} = 1\]
-    得$a + b + c =\frac{4}{9}$.又
+    得$a + b + c =\frac{4}{9}$. 又
     \[p_{22} = b = p_{2\cdot}p_{\cdot 2}\]
     解得$b = \frac{2}{9}$.\\
     \leftnote{注意计算准确}
-    综上可以得到$a = \dfrac{1}{18},b=\dfrac{2}{9},c=\dfrac{1}{6}$.即
+    综上可以得到$a = \dfrac{1}{18}, b=\dfrac{2}{9}, c=\dfrac{1}{6}$.即
     \begin{center}
         \begin{tabular}{@{}ccccc@{}}
             \toprule
-            $Y,X$         & $x_1$  & $x_2$ & $x_3$ & $p_{i\cdot}$ \\ \midrule
+            $Y, X$        & $x_1$  & $x_2$ & $x_3$ & $p_{i\cdot}$ \\ \midrule
             $y_1$         & $1/18$ & $1/9$ & $1/6$ & $1/3$        \\ \midrule
             $y_2$         & $1/9$  & $2/9$ & $1/3$ & $2/3$        \\ \midrule
             $p_{\cdot j}$ & $1/6$  & $1/3$ & $1/2$ & $1$          \\ \bottomrule
@@ -298,55 +298,55 @@
     \end{center}
     }
     \subsection{连续型随机变量的独立性}
-    若$X,Y$是连续型随机变量,可以由此判断其独立性:\\
-    \leftnote{严谨的说法是:\\\textit{几乎处处成立}.亦即不包括平面上面积为$0$的集合.}
+    若$X, Y$是连续型随机变量, 可以由此判断其独立性:\\
+    \leftnote{严谨的说法是:\\\textit{几乎处处成立}. 亦即不包括平面上面积为$0$的集合.}
     \begin{equation}
-        f(x,y) = f_X(x)f_Y(y)\quad\forall x,y
+        f(x, y) = f_X(x)f_Y(y)\quad\forall x, y
         \label{eq:3.18}
     \end{equation}
-    则称$X,Y$相互独立.
+    则称$X, Y$相互独立.
 \mprop{}{
-    \eqref{eq:3.18}和\eqref{eq:3.15}是等价命题.
+    ~\eqref{eq:3.18}和\eqref{eq:3.15}是等价命题.
 }
 \pf{证明}{
     (\textit{充分性})对\eqref{eq:3.18}两边积分有
     \begin{align*}
-        \int_{-\infty}^{x}\int_{-\infty}^{y}f(x,y)\dd{x}\dd{y} = F(x,y)
+        \int_{-\infty}^{x}\int_{-\infty}^{y}f(x, y)\dd{x}\dd{y} = F(x, y)
          & = \int_{-\infty }^{x}\int_{-\infty}^{y}f_X(x)f_Y(y)\dd{x}\dd{y}                \\
          & = \int_{-\infty}^{x}f_X(x)\dd{x}\int_{-\infty}^{y}f_Y(y)\dd{y}   \text{(分离变量)} \\
          & = F_X(x)F_Y(y).
     \end{align*}
     (\textit{必要性})对\eqref{eq:3.15}两边求两次偏导有
-    \[\pdv{F(x,y)}{x}{y} = f(x,y) = \pdv{F_X}{x}\cdot\pdv{F_Y}{y} = f_X(x)f_Y(y)\]
+    \[\pdv{F(x, y)}{x}{y} = f(x, y) = \pdv{F_X}{x}\cdot\pdv{F_Y}{y} = f_X(x)f_Y(y)\]
 }
-同时,我们通过上述证明,得到了重要的推论:\\
+同时, 我们通过上述证明, 得到了重要的推论:\\
 \cor{快速判断独立性}{
-    若$f(x,y)$是\emph{可分离变量}的,且$x,y$的取值范围独立$\;\iff\;X,Y$独立.
+    若$f(x, y)$是\emph{可分离变量}的, 且$x, y$的取值范围独立$\;\iff\;X, Y$独立.
 }
 \exc{P\textsubscript{78}14}{
-    \[ f(x,y) = \begin{cases}
+    \[ f(x, y) = \begin{cases}
             \dfrac{1}{2x^2y}, & 1\leq x \leq +\infty, \dfrac{1}{x}\leq y \leq x, \\
             0,                & \text{otherwise}
         \end{cases}\]
-    判断$X,Y$是否独立.
+    判断$X, Y$是否独立.
 }
 \sol{
-    要判断其独立性,先求两个边缘密度:\\
-    \[f_X(x) = \int_{-\infty}^{+\infty}f(x,y)\dd{y} = \begin{cases}
+    要判断其独立性, 先求两个边缘密度:\\
+    \[f_X(x) = \int_{-\infty}^{+\infty}f(x, y)\dd{y} = \begin{cases}
             \displaystyle\int_{1/x}^{x}\dfrac{1}{2x^2y} = \dfrac{\ln{x}}{2x^2}, & 1\leq x \leq +\infty, \\
             0,                                                                  & \text{otherwise}
         \end{cases}\]
-    对于$Y$,在下图第一象限阴影区域内对$x$积分
+    对于$Y$, 在下图第一象限阴影区域内对$x$积分
     \begin{figure}[h]
         \centering
         \includegraphics[scale=.15]{p78-14}
     \end{figure}
 
-    设积分区域(阴影部分)为$D$,则将$D$投影到$y$轴上.\href{https://en.wikipedia.org/wiki/Multiple_integral#Normal_domains_on_R2}{(复习)}
-    \leftnote{\color{red}此处的$x$的范围并不是$[1,+\infty]$.应将$D$投影到$y$轴上来讨论$x$的范围(\textit{想累次积分定义})}
+    设积分区域(阴影部分)为$D$, 则将$D$投影到$y$轴上.\href{https://en.wikipedia.org/wiki/Multiple_integral#Normal_domains_on_R2}{(复习)}
+    \leftnote{\color{red}此处的$x$的范围并不是$[1, +\infty]$. 应将$D$投影到$y$轴上来讨论$x$的范围(\textit{想累次积分定义})}
     \[D = D_1 + D_2 = \{x\geq y, 1\leq y\} + \{x\geq 1/y , 0< y \leq 1\}\]
     \begin{align*}
-        \ie\quad f_Y(y) & = \int_{D_1}f(x,y)\dd{x} + \int_{D_2}f(x,y)\dd{x}                                            \\
+        \ie\quad f_Y(y) & = \int_{D_1}f(x, y)\dd{x} + \int_{D_2}f(x, y)\dd{x}                                          \\
                         & =\begin{cases}
                                \displaystyle\int_{1/y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 0< y\leq 1, \\
                                \displaystyle\int_{y}^{+\infty}\dfrac{1}{2x^2y}\dd{x}, 1\leq y,      \\
@@ -354,6 +354,6 @@
                            \end{cases}
                         & = (\cdots)
     \end{align*}
-    \leftnote{要写出乘积.若判断独立性先枚举特值找反例.}
-    两者相乘,显然不与$f(x,y)$相等.\;\;$\tf\; XY$不独立.
+    \leftnote{要写出乘积. 若判断独立性先枚举特值找反例.}
+    两者相乘, 显然不与$f(x, y)$相等.\;\;$\tf\; XY$不独立.
 }
