@@ -34,6 +34,7 @@
 当$k=2$时, $\frac{n}{n-1}B_2 = S^2$.
 
 \section{常用统计分布}
+\leftnote[4cm]{构造性定义}
 \subsection{卡方分布}
 \dfn{$\chi^2$分布}{
     设$X_1,X_2,\ldots,X_n$是来自$N(0,1)$的样本, 则称随机变量
@@ -63,7 +64,8 @@ $\chi^2$分布的PDF为
     \begin{align*}
         \dfrac{X_1 + X_2 +X_3}{\sqrt{3}}\sim N(0,1), &  & \dfrac{X_4+ X_5 +X_6}{\sqrt{3}}\sim N(0,1),
     \end{align*}
-    且由定理 (3.2.2)得这两项相互独立. 于是,
+    因为这两项相互独立,
+    \leftnote{定理 (3.2.2)}
     \[\left( \dfrac{X_1 + X_2 + X_3}{\sqrt{3}}^2 \right) + \left(\dfrac{X_4 + X_5 + X_6}{\sqrt{3}}^2 \right)\sim \chi^2(2).\]
     提公共常数$C = \dfrac{1}{3}$即得. 从而$\displaystyle\frac{1}{3}Y\sim\chi^2(2)$.
 }
@@ -98,8 +100,73 @@ $t$分布的PDF如下. 注意到这是一个偶函数.
 \pf{证明}{
     由题意:  $X_i/3\sim N(0,1),\; Y_i/3\sim N(0,1)\Rightarrow \dfrac{\sum_{i=1}^{9}X_i}{3}\sim N(0,1)\;\;\text{(\circled{1})}$
     \[\text{构造}\sum_{i=1}^{9}Y_i^2\sim \chi^2(9)\tag{\circled{2}}\]
-    由定义 (5.2.2), 由\circled{1}\circled{2}构造$T\sim t(9)$, 其中$T$为
+    由\circled{1}\circled{2}构造$T\sim t(9)$, 其中$T$为
+    \leftnote{定义 (5.2.2)}
     \begin{align*}
         T=\dfrac{\left. \left( \sum_{i=1}^{9}X_i/3 \right) \middle/ 3\right.}{\sqrt{\left.\sum_{i=1}^{9}\left( Y_i/3 \right)^2\middle/ 9\right.}} &  & \text{化简有}\ \ = \dfrac{\sum_{i=1}^{9}X_i}{\sqrt{\sum_{i=1}^{9}Y_i^2}}
     \end{align*}
 }
+\subsection{分位数}
+\dfn{分位数}{
+    设$X$是一个连续型随机变量, $0<\alpha<1$, 若实数$x_\alpha$满足
+    \[\Pr{X< x_\alpha} = \alpha,\]
+    则称$x_\alpha$为$X$的水平为$p$的\vocab{上侧分位数}.
+}
+若实数$x_{\alpha/2}$满足
+\[\Pr{\abs{X}>x_{\alpha/2}} = x_{\alpha/2},\]
+则称$x_{\alpha/2}$为$X$的水平为$\alpha$的\vocab{双侧分位数}. 一般不直接求解分位数, 对常用的统计分布一般查表来得到分位数的值.
+
+\textbf{注}\quad 记$u_\alpha$为标准正态分布的水平为$\alpha$的上侧分位数, $\chi_\alpha^2(n)$为自由度为$n$的$\chi^2$分布的水平为$\alpha$的上侧分位数, $t_\alpha(n)$为自由度为$n$的$t$分布的水平为$\alpha$的上侧分位数. 有结论 (利用PDF是偶函数的对称性)
+\begin{equation}
+    u_\alpha = -u_{1-\alpha},\quad t_\alpha(n) = -t_{1-\alpha}(n)
+\end{equation}
+\ex{P\textsubscript{121}例1}{
+    设$\alpha=0.05$, 求标准正态分布的水平$0.05$的上侧分位数和双侧分位数.
+}
+\sol{
+    由于$\Phi(u_{0.05}) = 1 - 0.05 = 0.95$, 查表有$u_{0.05} = 1.645$.
+    双侧分位数$u_{0.025}$满足$\Phi(u_{0.025}) = 1 - 0.025 = 0.975$, 查表有$u_{0.025} = 1.96$.\\
+}
+\subsection{F分布}
+\dfn{$F$分布}{
+    设$X\sim \chi^2(m),\,Y\sim \chi^2(n)$, 且$X$与$Y$相互独立, 则称随机变量
+    \begin{equation}
+        F = \frac{X/m}{Y/n}
+    \end{equation}
+    服从自由度为$(m,n)$的\vocab{$F$分布}, 记为$F\sim F(m,n)$.
+}
+若$X\sim t(n)$, 则$X^2\sim F(1,n)$; 若$F\sim F(m,n)$, 则$\frac{1}{F}\sim F(n,m)$.
+
+记$F$分布的分位数为$F_{\alpha}(m,n)$, 其中$a,b$分别为分位数的上侧概率和下侧概率.
+\qs{证明}{
+    \begin{equation}
+        F_\alpha(m,n) = \dfrac{1}{F_{1-\alpha}(n,m)}.
+    \end{equation}
+}
+\pf{证明}{
+设$F\sim F(m,n)$, 移项有
+\leftnote[1cm]{定义 (5.2.3)}
+\[\Pr{F< F_\alpha(m,n)} = \alpha = \Pr{\dfrac{1}{F}\geq \dfrac{1}{F_\alpha(m,n)}}.\]
+将$1/F$整体看作一个随机变量,
+\leftnote{定义 (2.3.1)}
+\[1-\alpha = \Pr{\dfrac{1}{F}< \dfrac{1}{F_\alpha(m,n)}}\tag{$\ast$}\]
+根据$F$分布的性质, $1/F\sim F(n,m)$, 其水平为$1-\alpha$的分位数$F_{1-\alpha}(n,m)$满足
+\[1-\alpha = \Pr{\dfrac{1}{F} < F_{1-\alpha}(n,m)}\]
+与 ($\ast$)式比较,
+\[\tf\;\;F_{1-\alpha}(n,m) = \dfrac{1}{F_\alpha(m,n)}\Longrightarrow F_\alpha(m,n) = \dfrac{1}{F_{1-\alpha}(n,m)}.\]
+}
+
+\section{抽样分布}
+\subsection{单正态总体的抽样分布}
+\thm{}{
+    设总体$X\sim N(\mu,\sigma)$, $X_1,\ldots,X_n$是取自$X$的一个样本,$\overline{X}$和$S^2$分别是样本均值和样本方差, 则
+    \begin{align}
+         & (1)\;       \overline{X}\sim N(\mu,\sigma^2/n);                                                                          \\
+         & (2^\ast)\;  U = \dfrac{\overline{X} - \mu}{\sigma^2/\sqrt{n}\sim N(0,1)};                                                \\
+         & (3^\ast)\;  \chi^2 = \dfrac{n-1}{\sigma^2}S^2 = \dfrac{1}{\sigma^2}\sum_{i=1}^{n}(X_i - \overline{X})^2\sim \chi^2(n-1); \\
+         & (4)\;       \overline{X}\text{与}S^2\text{相互独立}.                                                                          \\
+         & (5)\;       \chi^2 = \dfrac{1}{\sigma^2}\sum_{i=1}^{n}(X_i-\mu)^2\sim \chi^2(n);                                         \\
+         & (6^\ast)\;  T = \dfrac{\overline{X} -\mu}{S/\sqrt{n}}\sim t(n-1)
+    \end{align}
+}
+标$\ast$号的是后面常用的定理.

@@ -161,7 +161,8 @@
     那么, 我们有
     \[k\cdot\iint_G6-x-y \dd{x}\dd{y} = \Pr{X+Y\leq 4}= \frac{2}{3}\;\;\mbox{即为所求}.\]
     \leftnote[2cm]{相当于固定一个变量, 对另一个变量积分}
-    (3)根据\ref{sec:marginPDF}, 可以得到
+    (3)由边缘密度的定义可以得到
+    \leftnote{定义 (\ref{sec:marginPDF})}
     \begin{align*}
         f_X(x) & = \begin{cases}
                        {\displaystyle\frac{1}{8}\cdot\int_{2}^{4-x}(6-x-y)\dd{y} = \frac{1}{8}(6-4x+\frac{1}{2}x^2)}, & 0<x<2            \\
@@ -223,7 +224,8 @@
                             0,             & \mbox{otherwise}
                         \end{cases}
         \end{align*}
-        根据\eqref{eq:3.12}, 只需考虑点在圆域内的情况, 易得
+        只需考虑点在圆域内的情况, 易得
+        \leftnote{\eqref{eq:3.12}}
         \begin{align*}
             f_X(x)     & = \frac{1}{\pi}\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\dd{y} = \frac{2}{\pi}\sqrt{1-x^2}. \\
             \tf f_X(x) & = \begin{cases}

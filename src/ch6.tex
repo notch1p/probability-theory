@@ -1,0 +1,39 @@
+\chapter{参数估计}
+\section{点估计问题概述}
+\subsection{点估计的概念}
+设$X_1,\ldots,X_n$是取自总体$X$的一个样本, $x_1,\ldots,x_n$是相应的一个样本值,$\theta$是总体分布中的未知参数, 为估计未知参数$\theta$, 需要构造一个适当的统计量
+\leftnote{$\hat{\theta}$是随机变量, 也是样本的函数}
+\begin{equation}
+    \hat{\theta}(X_1,\ldots,X_n)
+\end{equation}
+并用其观察值
+\begin{equation}
+    \hat{\theta}(x_1,\ldots,x_n)
+\end{equation}
+来估计$\theta$的值. 式 (6.1)和式 (6.2)分别称为\vocab{点估计量}和\vocab{点估计值}.
+\section{点估计的常用方法}
+\subsection{矩估计法}
+由大数定律我们知道,当总体的$k$阶矩存在时, 样本的$k$阶矩依概率收敛于总体的$k$阶矩. 譬如说可用样本均值$\overline{X}$作为总体均值$\EE{X}$的估计量. 一般地,记
+\begin{enumerate}
+    \item 总体$k$阶原点矩 $\mu_k=\EE{X^k}$
+    \item 样本$k$阶原点矩 $A_k=\frac{1}{n}\sum_{i=1}^nX_i^k$
+    \item 总体$k$阶中心矩 $\nu_k=\EE[k]{X-\EE{X}}$
+    \item 样本$k$阶中心矩 $B_k=\frac{1}{n}\sum_{i=1}^n(X_i-\overline{X})^k$
+\end{enumerate}
+\ex{P\textsubscript{141}例3}{
+    设总体$X$的概率分布为
+    \begin{center}
+        \begin{tabular}{@{}llll@{}}
+            \toprule
+            $X$   & $1$        & $2$                 & $3$            \\ \midrule
+            $p_i$ & $\theta^2$ & $2\theta(1-\theta)$ & $(1-\theta)^2$ \\ \bottomrule
+        \end{tabular}
+    \end{center}
+    其中$0<\theta<1$. 现抽得一个样本$x_1 = 1,\,x_2 = 2\,x_3=1$, 求$\theta$的矩估计量.
+}
+\sol{
+    \[\mu_1 = \EE{X} = \theta^2 + 2\times 2\theta(1-\theta) +3(1-\theta)^2 = 3-2\theta,\]
+    \[A_1 = \dfrac{1}{3}(1+2+1) = \dfrac{4}{3}\]
+    \emph{令之相等}, 得$3-2\theta = \dfrac{4}{3}$, 即$\theta$矩估计$\hat{\theta} = \dfrac{5}{6}$.
+    \leftnote{体现矩估计思想}
+}
