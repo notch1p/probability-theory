@@ -10,7 +10,67 @@
 \begin{equation}
     \hat{\theta}(x_1,\ldots,x_n)
 \end{equation}
-来估计$\theta$的值. 式 (6.1)和式 (6.2)分别称为\vocab{点估计量}和\vocab{点估计值}.
+来估计$\theta$的值. 式 (6.1)和式 (6.2)分别称为\vocab{点估计\uwave{量}}和\vocab{点估计\uwave{值}}.
+\subsection{评价估计的标准}
+\subsubsection{无偏性}
+\dfn{}{
+    设$\hat{\theta}$是$\theta$的一个估计量, 若
+    \begin{equation}
+        \EE{\hat{\theta}} = \theta,
+    \end{equation}
+    则称$\hat{\theta}$是$\theta$的一个\vocab{无偏估计量}, 否则称为\vocab{有偏估计量}.
+}
+将$\EE{\hat{\theta}}-\theta$称为用$\hat{\theta}$估计$\theta$的系统偏差. 对一般总体而言, 有
+\thm{Slutsky's theorem}{
+    设$X_1,\ldots,X_n$是来自总体$X$的样本, 总体$X$的均值为$\mu$, 方差为$\sigma^2$, 则
+    \begin{enumerate}
+        \item 样本均值$\overline{X}$是$\mu$的无偏估计量;
+        \item 样本方差$S^2$是$\sigma^2$的无偏估计量.
+        \item $B_2=\frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^2$是$\sigma^2$的\emph{渐进无偏} ($n\to\infty$)估计量.
+    \end{enumerate}
+}
+\thm{}{
+    若$\sum_{i}a_i = 1$, 则估计量
+    \[
+        \begin{pmatrix}
+            a_1 & \cdots & a_n
+        \end{pmatrix}\begin{pmatrix}
+            X_1    \\
+            \vdots \\
+            X_n
+        \end{pmatrix}
+    \]
+    是$\mu$的无偏估计量.
+}
+\exc{P\textsubscript{140}3}{
+    设$\hat{\theta}$是参数$\theta$的无偏估计. 且$\Var{\hat{\theta}} > 0$, 试证$\hat{\theta}^2 = \left(\hat{\theta}\right)^2$不是$\theta^2$的无偏估计.
+}
+\pf{Proof}{
+    \begin{align*}
+        \bc & \Var{\hat{\theta}}                           > 0, \\
+        \leftnote{\eqref{eq:4.9}}
+        \tf & \EE{\hat{\theta}^2} - \EE[2]{\hat{\theta}}  > 0.
+        \intertext{因为$\EE{\hat{\theta}} = \theta$, 移项有}
+        \tf & \EE{\hat{\theta}^2} > \theta^2.
+    \end{align*}
+}
+\subsubsection{有效性}
+在没有系统偏差的情况下, 比较随机误差.
+\dfn{}{
+    设$\hat{\theta}_1$和$\hat{\theta}_2$是$\theta$的两个无偏估计量, 有
+    \begin{equation}
+        \Var{\hat{\theta}_1} \leq \Var{\hat{\theta}_2},
+    \end{equation}
+    则称$\hat{\theta}_1$比$\hat{\theta}_2$\vocab{有效}.
+}
+\subsubsection{相合性}
+\dfn{}{
+    设$\hat{\theta} = \hat{\theta}(X_1,\ldots,X_n)$为未知参数$\theta$的估计量. 若$\hat{\theta}\xrightarrow{P}\theta,\,\ie\ \epsilon>0$,
+    \begin{equation}
+        \lim_{n\to\infty}\Pr{\abs{\hat{\theta}_n - \theta}<\epsilon} = 1,
+    \end{equation}
+    则称$\hat{\theta}_n$是$\theta$的一个\vocab{相合估计量}.
+}
 \section{点估计的常用方法}
 \subsection{矩估计法}
 由大数定律我们知道,当总体的$k$阶矩存在时, 样本的$k$阶矩依概率收敛于总体的$k$阶矩. 譬如说可用样本均值$\overline{X}$作为总体均值$\EE{X}$的估计量. 一般地,记
@@ -35,5 +95,115 @@
     \[\mu_1 = \EE{X} = \theta^2 + 2\times 2\theta(1-\theta) +3(1-\theta)^2 = 3-2\theta,\]
     \[A_1 = \dfrac{1}{3}(1+2+1) = \dfrac{4}{3}\]
     \emph{令之相等}, 得$3-2\theta = \dfrac{4}{3}$, 即$\theta$矩估计$\hat{\theta} = \dfrac{5}{6}$.
-    \leftnote{体现矩估计思想}
+    \leftnote{体现矩估计思想: 样本矩等于总体矩}
+}
+\subsection{最大似然估计法}
+\dfn{}{
+    对任意给定样本值$x_1,\ldots,x_n$,
+    \[\exists\hat{\theta}=\hat{\theta}(\bmx),\,\text{where}\ \uwave{\bmx=(x_1,\ldots,x_n)}\;\st\;
+        \LL(\hat{\theta}) = \argmax_\theta\LL(\theta;\bmx),
+    \]
+    则称$\hat{\theta} = \hat{\theta}(\bmx)$为$\theta$的\vocab{最大似然估计值}, $\hat{\theta}(X_1,X_2,\ldots,X_n)$为$\theta$的\vocab{最大似然估计量}.
+    统称为\vocab{最大似然估计 (MLE)}.
+}
+其中$\LL(\theta)$称为样本的\vocab{似然函数}.
+若为\emph{离散型}, 设总体$X$的概率分布为$\Pr{X=x}=p(x;\theta)$, 如果$X_1,X_2,\ldots,X_n$是来自$X$的样本, 观察值为$\bmx$, 记$\LL(\theta)$:
+\begin{equation}
+    \LL(\theta) = \LL(\underbrace{\bmx}_{\text{参数}};\overbrace{\theta}^{\text{变量}}) = \prod_{i=1}^n p(x_i;\theta)
+\end{equation}
+
+若为\emph{连续型}, 设总体$X$的PDF为$f(x;\theta)$, $X_1,X_2,\ldots,X_n$是来自$X$的样本 ($n$维连续型随机变量, 联合PDF为$f(\bmx)$), 观察值为$\bmx$.
+因为$(X_1,\ldots,X_n)$\emph{相互独立}, 根据\eqref{eq:3.15},
+\[f(x_1,\ldots,x_n) = f_{x_1}(x_1)f_{x_2}(x_2)\cdots f_{x_n}(x_n),\]
+因此记$\LL(\theta)$:
+\begin{equation}
+    \LL(\theta) = \LL(\bmx;\theta) = \prod_{i=1}^n f(x_i;\theta)
+\end{equation}
+
+为了方便计算, 经常在两侧取对数, 称为\vocab{对数似然函数}:
+\begin{equation}
+    \ell(\bmx;\theta) = \ln{\LL(\bmx;\theta)}
+\end{equation}
+因此, 只要求出一个$\theta$\;\st\;$\LL(\theta)$取最大值即可, 记这个$\theta$为$\hat{\theta}$, 对可微函数$\LL(\theta)$,
+\leftnote{对似然函数而言, 驻点即为极大值点.}
+令$\LL'(\theta) = 0$或$\ell'(\theta) = 0$, 求出驻点.
+\ex{P\textsubscript{143}例4}{
+    设$X\sim b(1,p)$, $X_1,X_2,\ldots,X_n$是来自$X$的样本, 求$p$的MLE.
+}
+\sol{
+设$x_1,\ldots,x_n$是相应于样本$X_1,\ldots,X_n$的观察值, $X$的分布律为
+\[\Pr{X=x} = p^x(1-p)^{1-x},\;\;x=0,1.\]
+于是似然函数为
+\[\LL(p) = p^{\sum_{1}^{n}x_i}\times (1-p)^{\sum_{1}^{n}1-x_i},\]
+取对数
+\[\ln{\LL(p)} = \left(\sum_{i=1}^{n}x_i\right)\ln{p} + \left(n-\sum_{i=1}^{n}x_i\right)\ln{(1-p)},\]
+求导
+\[\dv{\ln{\LL(p)}}{p} = \dfrac{\sum_{i = 1}^{n}x_i}{p} - \dfrac{n - \sum_{i=1}^{n}x_i}{1-p} = 0\]
+解出$\hat{p}(x_1,\ldots,x_n)$
+\leftnote{最大似然\emph{估计值}}
+\[\hat{p} = \dfrac{\sum_{i=1}^{n}x_i}{n} = \overline{x},\]
+可得$\hat{p}(X_1,\ldots,X_n)$
+\leftnote{最大似然\emph{估计量}}
+\[\hat{p} = \dfrac{\sum_{i=1}^{n}X_i}{n} = \overline{X},\]
+}
+\ex{P\textsubscript{144}例5}{
+    设$X\sim e(\lambda)$, $X_1,X_2,\ldots,X_n$是来自$X$的样本, 求$\lambda$的MLE.
+}
+\sol{
+    似然函数为
+    \begin{align*}
+        \LL(x_1,\ldots,x_n; \lambda)                    = \prod_{i=1}^{n}f_{x_i}(x_i)
+                                                       & =\prod_{i = 1}^{n}\lambda^n e^{-\lambda x_i} \\
+                                                       & =\lambda^n e^{-\lambda\sum_{i=1}^{n}x_i},
+        \intertext{取对数}
+        \ln{\LL(x_1,\ldots,x_n;\lambda)}               & =n\ln{\lambda}-\lambda\sum_{i=1}^{n}x_i,
+        \intertext{求导}
+        \dv{\ln{\LL(x_1,\ldots,x_n;\lambda)}}{\lambda} & =\dfrac{n}{\lambda}-\sum_{i=1}^{n}x_i=0,
+    \end{align*}
+    解得$\lambda$的最大似然估计值$\displaystyle\hat{\lambda}(x_1,\ldots,x_n) = \dfrac{n}{\sum_{i=1}^{n}x_i} = \dfrac{1}{\overline{x}}$
+}
+\section{置信区间}
+\subsection{置信区间的概念}
+设$\theta$是总体$X$的未知参数, $\hat{\theta}_1(X_1,\ldots,X_n)$和$\hat{\theta}_2(X_1,\ldots,X_n)$是$\theta$的两个估计量, 如果对任意给定的$\alpha>0$, 有
+\begin{equation}
+    \Pr{\hat{\theta}_1<\theta<\hat{\theta}_2}= 1-\alpha,
+\end{equation}
+则称随机区间
+\[\hat{\theta}_1<\theta<\hat{\theta}_2\]
+是$\theta$的一个\vocab{置信度}为$1-\alpha$的\vocab{置信区间}, $\hat{\theta}_1$和$\hat{\theta}_2$分别称为$\theta$的\vocab{置信下限}和\vocab{置信上限}.
+\leftnote{要求置信区间尽可能短}
+在保证置信度的条件下, 尽可能提高估计精度.
+\section{正态总体的置信区间}
+\subsection{正态总体均值的置信区间}
+设$X_1,\ldots,X_n$是来自正态总体$N(\mu,\sigma^2)$的样本, $\mu$未知而$\sigma$已知, 对给定的置信水平$1-\alpha$, 由标准正态分布PDF的\uwave{对称性}可得$\mu$的置信区间为
+\begin{equation}
+    \left(\overline{X} - u_{\alpha/2}\times\dfrac{\sigma}{\sqrt{n}},\, \overline{X}+u_{\alpha/2}\times\dfrac{\sigma}{\sqrt{n}}\right).
+    \label{eq:6.6}
+\end{equation}
+其中$u_{\alpha/2}$是标准正态分布的上侧$\alpha/2$分位数.
+\ex{P\textsubscript{151}例1}{
+设$X_1,\ldots,X_{100}$是来自正态总体的样本, $\overline{x}=80,\sigma = 12$, 求$\mu$的置信度为$0.95$的置信区间.
+}
+\sol{
+    \leftnote{\eqref{eq:6.6}}
+    由题意$1-\alpha = 0.95\Rightarrow\alpha = 0.05$, 由标准正态分布表可得$u_{\alpha/2} = u_{0.025} = 1.96$, 代入有区间$(77.6,82.4)$.
+}
+
+设$X_1,\ldots,X_n$是来自正态总体$N(\mu,\sigma^2)$的样本, $\mu,\sigma$\emph{都未知}, 对给定的置信水平$1-\alpha$, 用$\sigma^2$的无偏估计$S^2$代替, 构造枢轴变量
+\leftnote{定理 (6.1.1)-2}
+\begin{equation*}
+    T = \dfrac{\overline{X}-\mu}{S/\sqrt{n}},
+\end{equation*}
+\leftnote{定理 (5.3.1)-6}
+因为$T\sim t(n-1)$, 由
+\[\Pr{-t_{\alpha/2}(n-1)<\dfrac{\overline{X} - \mu}{S/\sqrt{n}}<t_{a/2}(n-1)} = 1-\alpha,\]
+得$\mu$的置信区间为
+\begin{equation}
+    \left(\overline{X}-t_{\alpha/2}(n-1)\times\dfrac{S}{\sqrt{n}},\,\overline{X}+t_{\alpha/2}(n-1)\times\dfrac{S}{\sqrt{n}}\right).
+\end{equation}
+\ex{P\textsubscript{151}例2}{
+设$X_1,\ldots,X_{25}$是来自正态总体的样本, $\overline{x}=80$, 样本标准差$s = 12$, 求$\mu$的置信度为$0.95$的置信区间.
+}
+\sol{
+根据题意, $t_{\alpha/2}(n - 1)=t_{0.025}(24)=2.0639$. 将$\sigma$用$s$代替, 代入有区间$(75.05,84.95)$.
 }

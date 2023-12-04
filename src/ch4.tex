@@ -118,6 +118,7 @@
 由数学期望的性质可得方差计算的重要公式:
 \begin{equation}
     \Var{X} = \EE{X^2} - \EE[2]{X}.
+    \label{eq:4.9}
 \end{equation}
 \pf{证明}{
     \begin{align*}
@@ -308,7 +309,7 @@ $\dfrac{n_A}{n}$是事件$A$发生的频率, 这个定理表明当$n\to\infty$�
 这个定理表明:当$n$很大时, 随机变量$Y_n$的分布近似于正态分布$N(n\mu, n\sigma^2)$.
 \leftnote{所以无论$X$服从什么分布, 只要$n$足够大, 都可以用正态分布来近似.}
 \begin{align}
-    \ie\;\;Y_n = \sum_{i=1}^{n}X_i\overset{\text{近似}}{\sim} N(n\mu, n\sigma^2).\;\;\xRightarrow{\text{定理 (2.4.1)}}\;\;\dfrac{\sum_{i=1}^{n}X_i - n\mu}{\sigma\sqrt{n}}\overset{\text{近似}}{\sim} N(0, 1).
+    \ie\;\;Y_n = \sum_{i=1}^{n}X_i\overset{\text{近似}}{\sim} N(n\mu, n\sigma^2).\;\;\xRightarrow{\text{定理 (2.4.1)}}\;\;\dfrac{\sum_{i=1}^{n}X_i - n\mu}{\sigma\sqrt{n}} = \dfrac{\overline{X} - \mu}{\sigma/\sqrt{n}}\overset{\text{近似}}{\sim} N(0, 1).
 \end{align}
 \nt{
     复习定理 (2.4.1), 本节和下一章只要涉及到\uwave{转化为标准正态分布}都会经常用到. 可联系期望和方差的性质助记.
