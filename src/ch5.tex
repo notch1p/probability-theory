@@ -14,10 +14,11 @@
 \begin{equation}
     \overline{X} = \frac{1}{n}\sum_{i=1}^n X_i
 \end{equation}
-\subsubsection{样本方差}
-\begin{equation}
-    S^2 = \frac{1}{n-1}\sum_{i=1}^n \left( X_i - \overline{X} \right)^2
-\end{equation}
+\subsubsection{样本方差 (有偏, 无偏)}
+\begin{align}
+    S^2 = \frac{1}{n}\sum_{i=1}^n \left( X_i - \overline{X} \right)^2 &  &
+    S^2 = \frac{1}{\uwave{n-1}}\sum_{i=1}^n \left( X_i - \overline{X} \right)^2
+\end{align}
 \subsubsection{样本标准差}
 \begin{equation}
     S = \sqrt{S^2}
@@ -159,7 +160,7 @@ $t$分布的PDF如下. 注意到这是一个偶函数.
 \section{抽样分布}
 \subsection{单正态总体的抽样分布}
 \thm{}{
-    设总体$X\sim N(\mu,\sigma)$, $X_1,\ldots,X_n$是取自$X$的一个样本,$\overline{X}$和$S^2$分别是样本均值和样本方差, 则
+    设总体$X\sim N(\mu,\sigma)$, $X_1,\ldots,X_n$是取自$X$的一个样本, $\overline{X}$和$S^2$分别是样本均值和样本方差, 则
     \begin{align}
          & (1)\;       \overline{X}\sim N(\mu,\sigma^2/n);                                                                          \\
          & (2^\ast)\;  U = \dfrac{\overline{X} - \mu}{\sigma/\sqrt{n}}\sim N(0,1);                                                  \\
@@ -170,3 +171,11 @@ $t$分布的PDF如下. 注意到这是一个偶函数.
     \end{align}
 }
 标$\ast$号的是后面常用的定理.
+
+一些常用的记号:
+\begin{itemize}
+    \item[总体] $\mu$\quad 总体均值
+    \item $\sigma$\quad 总体\emph{标准差}
+    \item[样本] $\overline{X}$ \quad 样本均值
+    \item $S$\quad 样本\emph{标准差}
+\end{itemize}

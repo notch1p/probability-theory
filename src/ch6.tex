@@ -174,7 +174,7 @@
 \leftnote{要求置信区间尽可能短}
 在保证置信度的条件下, 尽可能提高估计精度.
 \section{正态总体的置信区间}
-\subsection{正态总体均值的置信区间}
+\subsection{正态总体\uwave{均值}的置信区间}
 设$X_1,\ldots,X_n$是来自正态总体$N(\mu,\sigma^2)$的样本, $\mu$未知而$\sigma$已知, 对给定的置信水平$1-\alpha$, 由标准正态分布PDF的\uwave{对称性}可得$\mu$的置信区间为
 \begin{equation}
     \left(\overline{X} - u_{\alpha/2}\times\dfrac{\sigma}{\sqrt{n}},\, \overline{X}+u_{\alpha/2}\times\dfrac{\sigma}{\sqrt{n}}\right).
@@ -207,3 +207,31 @@
 \sol{
 根据题意, $t_{\alpha/2}(n - 1)=t_{0.025}(24)=2.0639$. 将$\sigma$用$s$代替, 代入有区间$(75.05,84.95)$.
 }
+\exc{P\textsubscript{161}18}{
+    某公司生产电池, 现从其产品中抽取$50$只电池做寿命试验, 这些电池的平均寿命$\overline{x} = 2.266$, $s = 1.935$. 求电池平均寿命的置信度为$95\%$的置信区间.
+}
+\sol{
+设电池寿命为$X$. 由题意构造枢轴变量
+\[T = \frac{\overline{X} - \mu}{S / \sqrt{n}},\]
+\[-t_{\alpha/2}(n-1)<\dfrac{\overline{X} - \mu}{S/\sqrt{n}}<t_{a/2}(n-1).\]
+可得$\mu$的置信区间为
+\begin{equation*}
+    \left(\overline{X}-t_{\alpha/2}(n-1)\times\dfrac{S}{\sqrt{n}},\,\overline{X}+t_{\alpha/2}(n-1)\times\dfrac{S}{\sqrt{n}}\right),
+\end{equation*}
+将$t_{0.025}(49) = 1.96$, $\overline{x} = 2.266$, $s = 1.935$, $n = 49$代入可得$(1.730, 2.802)$.
+}
+\subsection{正态总体方差的置信区间}
+设$X_1,\ldots,X_n$是来自正态总体$N(\mu,\sigma^2)$的样本, $\mu,\sigma$\emph{都未知}, 对给定的置信水平$1-\alpha$, 构造枢轴变量
+\leftnote{定理 (5.3.1)-3}
+\[
+    \dfrac{n-1}{\sigma^2}S^2\sim \chi^2(n-1)
+\]
+因为卡方分布的PDF只在正半轴上有值 (\uwave{不具有对称性}), 所以两侧为$\chi^2_{1-\alpha/2}(n-1)$, $\chi^2_{\alpha/2}(n-1)$, 且
+\[
+    \Pr{\chi^2_{1-\alpha/2}(n-1)< \dfrac{n-1}{\sigma^2}S^2<\chi^2_{\alpha/2}(n-1)} = 1 -\alpha
+\]
+求解$\sigma^2$, 得方差为$\sigma^2$的$1-\alpha$置信区间为
+\begin{equation}
+    \left(\dfrac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)},\,\dfrac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)}\right).
+\end{equation}
+对上式开根号即得标准差为$\sigma$的$1-\alpha$置信区间.
